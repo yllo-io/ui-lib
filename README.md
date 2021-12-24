@@ -8,12 +8,13 @@ npm install
 ```
 cd package
 npm install
-```
-
-```
 npm link
 ```
 
+
+Запускаем пример использования
 ```
-npm link ui-lib
+cd tests
+npm link @yllo/ui-lib
+npm run dev
 ```
