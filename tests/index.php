@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+        <title>title</title>
+
+        <link rel=icon href=icon/favicon-32x32.png sizes="32x32" type="image/png"> <link rel=icon href=icon/favicon-16x16.png sizes="16x16" type="image/png">
+        <link rel=icon href=icon/iphone.png sizes="57x57" type="image/png">
+        <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png" />
+        <link rel=icon href=icon/apple-touch-icon.png sizes="180x180" type="image/png">
+        <link rel="icon" href="icon/mask.svg" color="#000000" />
+
+        <link rel="preload" href="assets/font/SFProDisplay-Regular.ttf" as="font" crossorigin="anonymous" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:image:alt" content="yllo module preview" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="627" />
+        <meta property="og:site_name" content="yllo" />
+        <meta property="og:title" content="yllo" />
+        <meta property="telegram_channel" content="ylllo" />
+        <meta property="og:image" content="meta/img.jpg" />
+        <meta property="og:description" content="XLT ERC20 swap" />
+        <meta name="twitter:image" content="meta/img.jpg" />
+
+        <link rel="icon" href="icon/favicon.ico" />
+        <link rel="apple-touch-icon" href="icon/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <link rel="stylesheet" href="assets/css/normalize.css" type="text/css" />
+        <link rel="stylesheet" href="assets/css/global.css?v=25" type="text/css" />
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+
+        <script src="assets/js/socket.io.js"></script>
+    </head>
+
+    <body>
+    </body>
+</html>

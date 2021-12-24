@@ -1,0 +1,35 @@
+{
+  "name": "@yllo/ui-lib",
+  "version": "1.0.0",
+  "description": "ui-lib",
+  "main": "index.ts",
+  "types": "index.d.ts",
+  "devDependencies": {
+    "sass": "^1.45.1",
+    "sass-loader": "^12.4.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4",
+    "webpack": "^5.65.0",
+    "svelte-loader": "^3.1.2",
+    "svelte-preprocess": "^4.9.8",
+    "svelte-preprocess-sass": "^2.0.1",
+    "style-loader": "^0.23.1",
+    "svelte": "^3.41.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yllo-io/ui-lib.git"
+  },
+  "author": "yllo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yllo-io/ui-lib/issues"
+  },
+  "homepage": "https://github.com/yllo-io/ui-lib#readme",
+  "dependencies": {
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1",
+    "svelte-loader": "^3.1.2",
+    "svelte-preprocess-sass": "^2.0.1"
+  }
+}

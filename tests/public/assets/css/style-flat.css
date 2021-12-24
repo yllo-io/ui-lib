@@ -1,0 +1,26 @@
+.flat_box{
+    box-shadow: none!important;
+    border: 0.3px solid #e4e4e4!important;
+    border-radius: 4px!important;
+}
+.flat_box_borderless{
+    box-shadow: none!important;
+    border-radius: 4px!important;
+}
+.flat_btn{
+    border-radius: 4px!important;
+}
+.flat_field{
+    border-radius: 4px!important;
+}
+.flat_radius{
+    border-radius: 4px!important;
+}
+.flat_radius ul li:first-child:hover{
+    border-top-left-radius: 3px!important;
+    border-top-right-radius: 3px!important;
+}
+.flat_radius ul li:last-child:hover{
+    border-bottom-left-radius: 3px!important;
+    border-bottom-right-radius: 3px!important;
+}
