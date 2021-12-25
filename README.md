@@ -1,20 +1,64 @@
 # ui-lib
-Устанавливаем node modules для тестов
+
+## Svelte UI Lib
+
+### Installation
+
+1. Install npm package
+
 ```
-cd tests
-npm install
+npm i @yllo/ui-lib
 ```
-Устанавливаем node modules для либы 
+
+2. Add scss classes
+
+```
+<style lang="scss" global>
+    @import '../node_modules/@yllo/ui-lib/UI/theme.scss';
+    @import '../node_modules/@yllo/ui-lib/UI/lib.scss';
+</style>
+```
+
+## Local Launch UI-lib & Dev config
+
+### Local link
+
+1. Open package folder
+
 ```
 cd package
+```
+
+2. Install & Local Link
+
+```
 npm install
 npm link
 ```
 
+### Launch
 
-Запускаем пример использования
+1. Open package folder
+
 ```
 cd tests
+```
+
+2. Install
+
+```
+npm install
+```
+
+3.  Local Link
+
+```
 npm link @yllo/ui-lib
+```
+
+4. Start dev server
+   (localhost:8080)
+
+```
 npm run dev
 ```
