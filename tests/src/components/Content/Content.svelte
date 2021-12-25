@@ -1,14 +1,8 @@
 <script lang="ts">
     import { Something } from '@yllo/ui-lib'
-    import { ESomething } from '@yllo/ui-lib/UI/components/Something/Something.svelte'
-    // import { Something } from '@yllo/ui-lib'
-    // import Something from '@yllo/ui-lib/UI/components/Something/Something.svelte'
+    import { ESomething } from '@yllo/ui-lib'
     import { onMount } from 'svelte'
     import Test from '../Test/Test.svelte'
-    // import Something from '../Something/Something.svelte'
-    onMount(() => {
-        // console.log(a)
-    })
 </script>
 
 <div class="wrapper">
