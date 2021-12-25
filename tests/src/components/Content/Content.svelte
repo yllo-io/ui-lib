@@ -1,5 +1,6 @@
 <script lang="ts">
     import { Something } from '@yllo/ui-lib'
+    import { ESomething } from '@yllo/ui-lib/UI/components/Something/Something.svelte'
     // import { Something } from '@yllo/ui-lib'
     // import Something from '@yllo/ui-lib/UI/components/Something/Something.svelte'
     import { onMount } from 'svelte'
@@ -8,12 +9,10 @@
     onMount(() => {
         // console.log(a)
     })
-    let a = Something
 </script>
 
 <div class="wrapper">
-    <!-- <Something /> -->
-    <svelte:component this={a} />
+    <Something value1={ESomething.prop2} />
     <Test />
 </div>
 

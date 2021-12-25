@@ -6,4 +6,5 @@
 
 <style lang="scss" global>
     @import '../node_modules/@yllo/ui-lib/UI/theme.scss';
+    @import '../node_modules/@yllo/ui-lib/UI/lib.scss';
 </style>

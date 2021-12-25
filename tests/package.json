@@ -27,7 +27,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "build-electron": "cross-env NODE_ENV=development webpack --env.electron --progress",
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --no-client-overlay",
     "start:dev": "webpack-dev-server",
     "start": "electron .",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=macicon.icns --prune=true --out=release-builds",
