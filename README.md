@@ -38,7 +38,7 @@ npm link
 
 ### Launch
 
-1. Open package folder
+1. Open tests folder
 
 ```
 cd tests
@@ -50,7 +50,7 @@ cd tests
 npm install
 ```
 
-3.  Local Link
+3.  Local Link @yllo/ui-lib
 
 ```
 npm link @yllo/ui-lib
