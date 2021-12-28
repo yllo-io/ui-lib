@@ -1,0 +1,20 @@
+name: NPM publish
+
+on:
+  workflow_dispatch:
+jobs:
+  publish_to_npm:
+    runs-on: ubuntu-latest
+    # needs: install-cache
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+          registry-url: "https://registry.npmjs.org"
+      - run: cd package/
+      - run: npm ci
+      - name: NPM Upload
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_KEY }}
