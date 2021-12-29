@@ -1,13 +1,24 @@
 <script lang="ts">
-    import { Something } from '@yllo/ui-lib'
-    import { ESomething } from '@yllo/ui-lib'
-    import { onMount } from 'svelte'
     import Test from '../Test/Test.svelte'
+
+    import { Paper } from '@yllo/ui-lib'
+    import { Button } from '@yllo/ui-lib'
+    import { EButton } from '@yllo/ui-lib'
 </script>
 
 <div class="wrapper">
-    <Something value1={ESomething.prop2} />
-    <Test />
+    <!-- <Test /> -->
+    <div class="paper">I am div with "paper" class</div>
+    <Paper rounded={false} shadow={false}>
+        <Button on:click={() => alert('Hello world!')} active={true} rounded={true} variant={EButton.outlined} marginHorizontal>Click me</Button>
+        <Button rounded={false} active={true} variant={EButton.outlined2} marginHorizontal>I am Button</Button>
+        <Button rounded={true} active={true} variant={EButton.filled} marginHorizontal>I am Button</Button>
+        <Button rounded={false} active={true} variant={EButton.text} marginHorizontal>I am Button</Button>
+        <Button rounded={false} active={true} variant={EButton.text2} marginHorizontal>I am Button</Button>
+    </Paper>
+    <Paper rounded={true} shadow={false}>
+        <Button rounded={false} active={false} stretched>I am Button</Button>
+    </Paper>
 </div>
 
 <style>
@@ -15,9 +26,12 @@
         width: 100%;
         height: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: var(--contrast-1);
-        color: rgb(255, 0, 0);
+        background-color: var(--line-1);
+    }
+    .wrapper > :global(*) {
+        margin: 30px 0;
     }
 </style>

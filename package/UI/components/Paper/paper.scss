@@ -1,0 +1,11 @@
+.paper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 46px 46px;
+    min-width: 394px;
+    background: var(--line-1);
+    border: 1px solid var(--line-3);
+    border-radius: 4px;
+    color: var(--line-4);
+}

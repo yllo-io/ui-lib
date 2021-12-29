@@ -1,5 +1,23 @@
-.something {
-  width: 200px;
-  border: 2px solid #121212;
-  font-size: 50px;
+@import './components/Button/button';
+@import './components/Paper/paper';
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.rounded {
+    border-radius: 12px !important;
+}
+
+.shadow {
+    box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.11) !important;
+}
+
+.shadow_strong {
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.22) !important;
 }
