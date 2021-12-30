@@ -4,6 +4,11 @@
     import { Paper } from '@yllo/ui-lib'
     import { Button } from '@yllo/ui-lib'
     import { EButton } from '@yllo/ui-lib'
+    import { Switcher } from '@yllo/ui-lib'
+    import { Loader } from '@yllo/ui-lib'
+
+    let switcherState: boolean = false
+    $: console.log('switcherState change', switcherState)
 </script>
 
 <div class="wrapper">
@@ -19,12 +24,20 @@
     <Paper rounded={true} shadow={false}>
         <Button rounded={false} active={false} stretched>I am Button</Button>
     </Paper>
+    <Paper>
+        <Switcher state={switcherState} active={true} on:change={(e) => (switcherState = e.detail)} />
+        <Switcher state={true} active={false} />
+    </Paper>
+    <Paper>
+        <Loader />
+        <Loader contrast />
+    </Paper>
 </div>
 
 <style>
     .wrapper {
         width: 100%;
-        height: 100%;
+        min-height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
