@@ -2,6 +2,8 @@
 @import './components/Paper/paper';
 @import './components/Switcher/switcher';
 @import './components/Loader/loader';
+@import './components/Checkbox/checkbox';
+@import './components/Input/input';
 
 .noselect {
     -webkit-touch-callout: none;
@@ -14,6 +16,9 @@
 
 .rounded {
     border-radius: 12px !important;
+}
+.rounded_light {
+    border-radius: 8px !important;
 }
 
 .shadow {

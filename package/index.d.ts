@@ -7,3 +7,5 @@ export { EButton }
 export declare const Button: typeof SvelteComponent
 export declare const Switcher: typeof SvelteComponent
 export declare const Loader: typeof SvelteComponent
+export declare const Checkbox: typeof SvelteComponent
+export declare const Input: typeof SvelteComponent

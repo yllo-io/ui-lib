@@ -6,9 +6,15 @@
     import { EButton } from '@yllo/ui-lib'
     import { Switcher } from '@yllo/ui-lib'
     import { Loader } from '@yllo/ui-lib'
+    import { Checkbox } from '@yllo/ui-lib'
+    import { Input } from '@yllo/ui-lib'
 
     let switcherState: boolean = false
-    $: console.log('switcherState change', switcherState)
+    $: console.log('reactive switcherState', switcherState)
+    let checkboxState: boolean = true
+    $: console.log('reactive checkboxState', checkboxState)
+    let inputValue: string = ''
+    $: console.log('reactive inputValue', inputValue)
 </script>
 
 <div class="wrapper">
@@ -25,12 +31,29 @@
         <Button rounded={false} active={false} stretched>I am Button</Button>
     </Paper>
     <Paper>
-        <Switcher state={switcherState} active={true} on:change={(e) => (switcherState = e.detail)} />
+        <Switcher bind:state={switcherState} active={true} on:change={(e) => console.log('switcher on change, state:', e.detail)} />
         <Switcher state={true} active={false} />
     </Paper>
     <Paper>
         <Loader />
         <Loader contrast />
+    </Paper>
+    <Paper>
+        <Checkbox bind:state={checkboxState} active={true} on:change={(e) => console.log('checkbox on change, state:', e.detail)} />
+        <Checkbox state={true} active={false} outlined />
+    </Paper>
+    <Paper>
+        <Input placeholder="ph text" label="label text" bind:value={inputValue} rounded={false} />
+        <Input placeholder="ph text" label="label text" active={false} value="Value" />
+    </Paper>
+    <Paper>
+        <Input placeholder="ph text" label="label text" active={true} value="Value" incorrect="Incorrect Value" stretched />
+    </Paper>
+    <Paper>
+        <Input placeholder="ph text" label="label text" active={true} value="Value" rightLabel="LABEL" stretched />
+    </Paper>
+    <Paper>
+        <Input placeholder="password" label="label text" active={true} value="" password stretched />
     </Paper>
 </div>
 
