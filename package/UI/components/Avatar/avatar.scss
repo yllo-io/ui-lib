@@ -1,0 +1,66 @@
+.avatar {
+    position: relative;
+    .avatar__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--line-1);
+    }
+    &.avatar_variant_0 > .avatar__inner {
+        border-radius: 50%;
+    }
+    &.avatar_variant_1 > .avatar__inner {
+        // mask-image: url(../node_modules/@yllo/ui-lib/UI/assets/images/avatar_mask.svg) no-repeat;
+        mask-size: cover;
+    }
+    &.avatar_size_1 > .avatar__inner {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+    }
+    &.avatar_size_2 > .avatar__inner {
+        width: 46px;
+        height: 46px;
+        font-size: 26px;
+    }
+    &.avatar_size_3 > .avatar__inner {
+        width: 50px;
+        height: 50px;
+        font-size: 27px;
+    }
+    &.avatar_size_4 > .avatar__inner {
+        width: 76px;
+        height: 76px;
+        font-size: 46px;
+    }
+    .avatar__online {
+        position: absolute;
+        background: var(--contrast-6);
+        border: 2px solid var(--line-1);
+        border-radius: 50%;
+    }
+    &.avatar_size_1 > .avatar__online {
+        right: 0;
+        bottom: 0;
+        width: 10px;
+        height: 10px;
+    }
+    &.avatar_size_2 > .avatar__online {
+        right: 1px;
+        bottom: 1px;
+        width: 12px;
+        height: 12px;
+    }
+    &.avatar_size_3 > .avatar__online {
+        right: 2px;
+        bottom: 2px;
+        width: 12px;
+        height: 12px;
+    }
+    &.avatar_size_4 > .avatar__online {
+        right: 5px;
+        bottom: 5px;
+        width: 15px;
+        height: 15px;
+    }
+}

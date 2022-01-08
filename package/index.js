@@ -6,4 +6,8 @@ export { default as Switcher } from './UI/components/Switcher/Switcher.svelte'
 export { default as Loader } from './UI/components/Loader/Loader.svelte'
 export { default as Checkbox } from './UI/components/Checkbox/Checkbox.svelte'
 export { default as Input } from './UI/components/Input/Input.svelte'
+export { default as Avatar } from './UI/components/Avatar/Avatar.svelte'
+export { EAvatar as EAvatar } from './UI/components/Avatar/Avatar.svelte'
+export { default as Tooltip } from './UI/components/Tooltip/Tooltip.svelte'
+export { ETooltip as ETooltip } from './UI/components/Tooltip/Tooltip.svelte'
 export default actions

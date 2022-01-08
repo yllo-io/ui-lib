@@ -2,12 +2,13 @@
     import Test from '../Test/Test.svelte'
 
     import { Paper } from '@yllo/ui-lib'
-    import { Button } from '@yllo/ui-lib'
-    import { EButton } from '@yllo/ui-lib'
+    import { Button, EButton } from '@yllo/ui-lib'
     import { Switcher } from '@yllo/ui-lib'
     import { Loader } from '@yllo/ui-lib'
     import { Checkbox } from '@yllo/ui-lib'
     import { Input } from '@yllo/ui-lib'
+    import { Avatar, EAvatar } from '@yllo/ui-lib'
+    import { Tooltip, ETooltip } from '@yllo/ui-lib'
 
     let switcherState: boolean = false
     $: console.log('reactive switcherState', switcherState)
@@ -54,6 +55,17 @@
     </Paper>
     <Paper>
         <Input placeholder="password" label="label text" active={true} value="" password stretched />
+    </Paper>
+    <Paper>
+        <Avatar variant={EAvatar.circle} size={4} symbol="A" online />
+    </Paper>
+    <Paper rounded={false} shadow={false}>
+        <Tooltip text="I am bottom tooltip" position={ETooltip.bottom} style="margin: 0 10px;">
+            <Button on:click={() => alert('Hello world!')} active={true} rounded={true} variant={EButton.outlined}>I have tooltip</Button>
+        </Tooltip>
+        <Tooltip text="I am right tooltip" position={ETooltip.right} style="margin: 0 10px;">
+            <Button on:click={() => alert('Hello world!')} active={true} rounded={true} variant={EButton.outlined}>I also have tooltip</Button>
+        </Tooltip>
     </Paper>
 </div>
 
