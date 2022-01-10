@@ -14,5 +14,5 @@
 
 <div class="tooltip-wrapper {_class}" {style}>
     <slot />
-    <div class="tooltip tooltip_position_{position}">{text}</div>
+    <div class="tooltip tooltip_position_{position} body4_math">{text}</div>
 </div>

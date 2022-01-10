@@ -5,13 +5,18 @@
         align-items: center;
         justify-content: center;
         color: var(--line-1);
+        font-family: var(--font-Medium);
     }
     &.avatar_variant_0 > .avatar__inner {
         border-radius: 50%;
     }
     &.avatar_variant_1 > .avatar__inner {
-        // mask-image: url(../node_modules/@yllo/ui-lib/UI/assets/images/avatar_mask.svg) no-repeat;
-        mask-size: cover;
+        mask-image: var(--avatar-mask);
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        -webkit-mask-image: var(--avatar-mask);
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
     }
     &.avatar_size_1 > .avatar__inner {
         width: 34px;

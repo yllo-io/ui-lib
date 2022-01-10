@@ -20,6 +20,9 @@
 
 <div class="wrapper">
     <!-- <Test /> -->
+    <Paper>
+        <div class="h1_math">Hello world!</div>
+    </Paper>
     <div class="paper">I am div with "paper" class</div>
     <Paper rounded={false} shadow={false}>
         <Button on:click={() => alert('Hello world!')} active={true} rounded={true} variant={EButton.outlined} marginHorizontal>Click me</Button>
@@ -57,7 +60,8 @@
         <Input placeholder="password" label="label text" active={true} value="" password stretched />
     </Paper>
     <Paper>
-        <Avatar variant={EAvatar.circle} size={4} symbol="A" online />
+        <Avatar variant={EAvatar.circle} size={1} symbol="A" online />
+        <Avatar variant={EAvatar.squircle} size={4} symbol="B" online />
     </Paper>
     <Paper rounded={false} shadow={false}>
         <Tooltip text="I am bottom tooltip" position={ETooltip.bottom} style="margin: 0 10px;">

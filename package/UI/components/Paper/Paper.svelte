@@ -5,6 +5,6 @@
     export let column: boolean = false
 </script>
 
-<div class="paper" class:rounded class:shadow_strong={shadowStrong} class:shadow class:column>
+<div class="paper body1" class:rounded class:shadow_strong={shadowStrong} class:shadow class:column>
     <slot></slot>
 </div>
