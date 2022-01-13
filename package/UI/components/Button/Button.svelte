@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-    export enum EButton {
+    export enum EButtonVariant {
         outlined,
         outlined2,
         filled,
@@ -11,26 +11,28 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte'
 
-    export let variant: EButton = EButton.outlined
-    export let rounded: boolean = true
-    export let stretched: boolean = false
-    export let active: boolean = true
-    export let marginHorizontal: boolean = false
-    export let marginVertical: boolean = false
+    export let variant: EButtonVariant = EButtonVariant.outlined
+    export let isRounded: boolean = true
+    export let isStretched: boolean = false
+    export let isActive: boolean = true
+    export let isMarginHorizontal: boolean = false
+    export let isMarginVertical: boolean = false
+    export let isHoverPointer: boolean = false
 
     const dispatch = createEventDispatcher()
 </script>
 
 <div
     on:click={(event) => {
-        if (active) dispatch('click', event)
+        if (isActive) dispatch('click', event)
     }}
     class="button button_variant_{variant} noselect"
-    class:stretched
-    class:rounded
-    class:disabled={!active}
-    class:margin_horizontal={marginHorizontal}
-    class:margin_vertical={marginVertical}
+    class:stretched={isStretched}
+    class:rounded={isRounded}
+    class:disabled={!isActive}
+    class:margin_horizontal={isMarginHorizontal}
+    class:margin_vertical={isMarginVertical}
+    class:hover_pointer={isHoverPointer}
 >
     <slot />
 </div>

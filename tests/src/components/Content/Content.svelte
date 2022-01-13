@@ -2,73 +2,80 @@
     import Test from '../Test/Test.svelte'
 
     import { Paper } from '@yllo/ui-lib'
-    import { Button, EButton } from '@yllo/ui-lib'
+    import { Button, EButtonVariant } from '@yllo/ui-lib'
     import { Switcher } from '@yllo/ui-lib'
     import { Loader } from '@yllo/ui-lib'
     import { Checkbox } from '@yllo/ui-lib'
     import { Input } from '@yllo/ui-lib'
-    import { Avatar, EAvatar } from '@yllo/ui-lib'
-    import { Tooltip, ETooltip } from '@yllo/ui-lib'
+    import { Avatar, EAvatarShape } from '@yllo/ui-lib'
+    import { Tooltip, ETooltipPosition } from '@yllo/ui-lib'
+    import ui, { EThemeType } from '@yllo/ui-lib'
+
+    import ChangeThemeButton from '../ChangeThemeButton/ChangeThemeButton.svelte'
+
+    let themeType: EThemeType = EThemeType.dark
+    ui.setTheme(EThemeType.dark)
 
     let switcherState: boolean = false
-    $: console.log('reactive switcherState', switcherState)
+    $: console.log('reisActive switcherState', switcherState)
     let checkboxState: boolean = true
-    $: console.log('reactive checkboxState', checkboxState)
+    $: console.log('reisActive checkboxState', checkboxState)
     let inputValue: string = ''
-    $: console.log('reactive inputValue', inputValue)
+    $: console.log('reisActive inputValue', inputValue)
 </script>
 
+<ChangeThemeButton bind:themeType style="position: absolute; top: 20px; right: 20px;" />
 <div class="wrapper">
     <!-- <Test /> -->
-    <Paper>
-        <div class="h1_math">Hello world!</div>
+    <Paper isPadding isCenter>
+        <div class="h1 font_math">Hello world!</div>
     </Paper>
-    <div class="paper">I am div with "paper" class</div>
-    <Paper rounded={false} shadow={false}>
-        <Button on:click={() => alert('Hello world!')} active={true} rounded={true} variant={EButton.outlined} marginHorizontal>Click me</Button>
-        <Button rounded={false} active={true} variant={EButton.outlined2} marginHorizontal>I am Button</Button>
-        <Button rounded={true} active={true} variant={EButton.filled} marginHorizontal>I am Button</Button>
-        <Button rounded={false} active={true} variant={EButton.text} marginHorizontal>I am Button</Button>
-        <Button rounded={false} active={true} variant={EButton.text2} marginHorizontal>I am Button</Button>
+    <div class="paper padding">I am div with "paper" class</div>
+    <Paper isCenter isPadding isRounded={false} isShadow={false}>
+        <Button on:click={() => alert('Hello world!')} isActive={true} isRounded={true} variant={EButtonVariant.outlined} isMarginHorizontal>Click me</Button>
+        <Button isRounded={false} isActive={true} variant={EButtonVariant.outlined2} isMarginHorizontal>I am Button</Button>
+        <Button isRounded={true} isActive={true} variant={EButtonVariant.filled} isMarginHorizontal>I am Button</Button>
+        <Button isRounded={false} isActive={true} variant={EButtonVariant.text} isMarginHorizontal>I am Button</Button>
+        <Button isRounded={false} isActive={true} variant={EButtonVariant.text2} isMarginHorizontal>I am Button</Button>
     </Paper>
-    <Paper rounded={true} shadow={false}>
-        <Button rounded={false} active={false} stretched>I am Button</Button>
+    <Paper isCenter isPadding isRounded={true} isShadow={false}>
+        <Button isRounded={false} isActive={false} isStretched>I am Button</Button>
     </Paper>
-    <Paper>
-        <Switcher bind:state={switcherState} active={true} on:change={(e) => console.log('switcher on change, state:', e.detail)} />
-        <Switcher state={true} active={false} />
+    <Paper isCenter isPadding>
+        <Switcher bind:state={switcherState} isActive={true} on:change={(e) => console.log('switcher on change, state:', e.detail)} />
+        <Switcher state={true} isActive={false} />
     </Paper>
-    <Paper>
+    <Paper isCenter isPadding>
         <Loader />
         <Loader contrast />
     </Paper>
-    <Paper>
-        <Checkbox bind:state={checkboxState} active={true} on:change={(e) => console.log('checkbox on change, state:', e.detail)} />
-        <Checkbox state={true} active={false} outlined />
+    <Paper isCenter isPadding>
+        <Checkbox bind:state={checkboxState} isActive={true} on:change={(e) => console.log('checkbox on change, state:', e.detail)} />
+        <Checkbox state={true} isActive={false} isOutlined />
     </Paper>
-    <Paper>
-        <Input placeholder="ph text" label="label text" bind:value={inputValue} rounded={false} />
-        <Input placeholder="ph text" label="label text" active={false} value="Value" />
+    <Paper isCenter isPadding>
+        <Input placeholder="ph text" label="label text" bind:value={inputValue} isRounded={false} />
+        <Input placeholder="ph text" label="label text" isActive={false} value="Value" />
     </Paper>
-    <Paper>
-        <Input placeholder="ph text" label="label text" active={true} value="Value" incorrect="Incorrect Value" stretched />
+    <Paper isCenter isPadding>
+        <Input placeholder="ph text" label="label text" isActive={true} value="Value" incorrect="Incorrect Value" isStretched />
     </Paper>
-    <Paper>
-        <Input placeholder="ph text" label="label text" active={true} value="Value" rightLabel="LABEL" stretched />
+    <Paper isCenter isPadding>
+        <Input placeholder="ph text" label="label text" isActive={true} value="Value" rightLabel="LABEL" isStretched />
     </Paper>
-    <Paper>
-        <Input placeholder="password" label="label text" active={true} value="" password stretched />
+    <Paper isCenter isPadding>
+        <Input placeholder="password" label="label text" isActive={true} value="" isPassword isStretched />
     </Paper>
-    <Paper>
-        <Avatar variant={EAvatar.circle} size={1} symbol="A" online />
-        <Avatar variant={EAvatar.squircle} size={4} symbol="B" online />
+    <Paper isCenter isPadding>
+        <Avatar variant={EAvatarShape.circle} size={1} symbol="A" isOnline />
+        <Avatar variant={EAvatarShape.squircle} size={4} symbol="B" isOnline />
     </Paper>
-    <Paper rounded={false} shadow={false}>
-        <Tooltip text="I am bottom tooltip" position={ETooltip.bottom} style="margin: 0 10px;">
-            <Button on:click={() => alert('Hello world!')} active={true} rounded={true} variant={EButton.outlined}>I have tooltip</Button>
+    <Paper isCenter isPadding isRounded={false} isShadow={false}>
+        <Tooltip text="I am bottom tooltip" position={ETooltipPosition.bottom} style="margin: 0 10px;">
+            <Button on:click={() => alert('Hello world!')} isActive={true} isRounded={true} variant={EButtonVariant.outlined}>I have tooltip</Button>
         </Tooltip>
-        <Tooltip text="I am right tooltip" position={ETooltip.right} style="margin: 0 10px;">
-            <Button on:click={() => alert('Hello world!')} active={true} rounded={true} variant={EButton.outlined}>I also have tooltip</Button>
+        <Tooltip text="I am right tooltip" position={ETooltipPosition.right} style="margin: 0 10px;">
+            <Button on:click={() => alert('Hello world!')} isActive={true} isRounded={true} variant={EButtonVariant.outlined}>I also have tooltip</Button>
         </Tooltip>
     </Paper>
 </div>

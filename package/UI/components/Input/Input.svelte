@@ -2,34 +2,34 @@
     export let value: string = ''
     export let label: string | false = false
     export let placeholder: string = ''
-    export let active: boolean = true
+    export let isActive: boolean = true
     export let incorrect: string | false = false
-    export let stretched: boolean = false
-    export let rounded: boolean = true
+    export let isStretched: boolean = false
+    export let isRounded: boolean = true
     export let rightLabel: string | false = false
-    export let password: boolean = false
+    export let isPassword: boolean = false
     let passwordHidden: boolean = true
 </script>
 
-<div class="input" class:incorrect class:disabled={!active} class:stretched>
+<div class="input" class:incorrect class:disabled={!isActive} class:stretched={isStretched}>
     {#if label}
         <span class="input__label">{label}</span>
     {/if}
-    {#if password}
+    {#if isPassword}
         {#if passwordHidden}
-            <input type="password" bind:value {placeholder} disabled={!active} class:rounded_light={rounded} />
+            <input type="password" bind:value {placeholder} disabled={!isActive} class:rounded_light={isRounded} />
         {:else}
-            <input type="text" bind:value {placeholder} disabled={!active} class:rounded_light={rounded} />
+            <input type="text" bind:value {placeholder} disabled={!isActive} class:rounded_light={isRounded} />
         {/if}
     {:else}
-        <input type="text" bind:value {placeholder} disabled={!active} class:rounded_light={rounded} />
+        <input type="text" bind:value {placeholder} disabled={!isActive} class:rounded_light={isRounded} />
     {/if}
-    {#if rightLabel || password}
+    {#if rightLabel || isPassword}
         <div class="right">
             {#if rightLabel}
                 <span class="right__label">{rightLabel}</span>
             {/if}
-            {#if password}
+            {#if isPassword}
                 <div
                     class="right__eye"
                     on:click={() => {

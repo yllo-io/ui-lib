@@ -1,8 +1,8 @@
 <script lang="ts">
-    export let contrast: boolean = false
+    export let isContrast: boolean = false
 </script>
 
-<div class="loader" class:contrast>
+<div class="loader" class:contrast={isContrast}>
     <div />
     <div />
     <div />

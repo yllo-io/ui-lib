@@ -8,6 +8,22 @@
 @import './components/Tooltip/tooltip';
 @import './components/Typography/typography';
 
+.color_contrast1 {
+    color: var(--contrast-1);
+}
+.color_contrast2 {
+    color: var(--contrast-2);
+}
+.color_contrast3 {
+    color: var(--contrast-3);
+}
+.color_contrast4 {
+    color: var(--contrast-4);
+}
+.color_contrast6 {
+    color: var(--contrast-6);
+}
+
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -30,4 +46,24 @@
 
 .shadow_strong {
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.22) !important;
+}
+
+.hover_pointer:hover {
+    cursor: pointer;
+}
+
+.flex_center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-align_left {
+    text-align: left;
+}
+.text-align_center {
+    text-align: center;
+}
+.text-align_right {
+    text-align: right;
 }

@@ -2,19 +2,19 @@
     import { createEventDispatcher } from 'svelte'
 
     export let state: boolean
-    export let active: boolean = true
-    export let outlined: boolean = false
+    export let isActive: boolean = true
+    export let isOutlined: boolean = false
 
     const dispatch = createEventDispatcher()
 </script>
 
 <div
     class="checkbox"
-    class:outlined
-    class:disabled={!active}
+    class:outlined={isOutlined}
+    class:disabled={!isActive}
     class:checked={state}
     on:click={() => {
-        if (active) {
+        if (isActive) {
             state = !state
             dispatch('change', state)
         }

@@ -2,7 +2,7 @@
     import { createEventDispatcher } from 'svelte'
 
     export let state: boolean
-    export let active: boolean = true
+    export let isActive: boolean = true
 
     const dispatch = createEventDispatcher()
 
@@ -41,9 +41,9 @@
 
 <div
     class="switcher noselect"
-    class:disabled={!active}
+    class:disabled={!isActive}
     on:click={() => {
-        if (active) {
+        if (isActive) {
             state = !state
             dispatch('change', state)
         }

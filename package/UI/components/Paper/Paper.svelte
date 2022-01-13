@@ -1,10 +1,22 @@
 <script lang="ts">
-    export let rounded: boolean = true
-    export let shadow: boolean = true
-    export let shadowStrong: boolean = false
-    export let column: boolean = false
+    export let isRounded: boolean = true
+    export let isShadow: boolean = true
+    export let isShadowStrong: boolean = false
+    export let isColumn: boolean = false
+    export let isPadding: boolean = false
+    export let isCenter: boolean = false
+    export let isBackground: boolean = false
 </script>
 
-<div class="paper body1" class:rounded class:shadow_strong={shadowStrong} class:shadow class:column>
-    <slot></slot>
+<div
+    class="paper body1"
+    class:flex_center-center={isCenter}
+    class:padding={isPadding}
+    class:rounded={isRounded}
+    class:shadow_strong={isShadowStrong}
+    class:shadow={isShadow}
+    class:column={isColumn}
+    class:background={isBackground}
+>
+    <slot />
 </div>
