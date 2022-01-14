@@ -37,26 +37,28 @@ ui.setTheme(EThemeType.dark)
 
 ## Components
 
-[typography](#typography)
-[root variables](#root-variables)
-[avatar](#avatar)
-[button](#button)
-[checkbox](#checkbox)
-[input](#input)
-[loader](#loader)
-[paper](#paper)
-[switcher](#switcher)
-[paper](#paper)
-[other classes](#other-classes)
+ - [typography](#typography)
+ - [root variables](#root-variables)
+ - [avatar](#avatar)
+ - [button](#button)
+ - [checkbox](#checkbox)
+ - [input](#input)
+ - [loader](#loader)
+ - [paper](#paper)
+ - [switcher](#switcher)
+ - [paper](#paper)
+ - [other classes](#other-classes)
 
 \* - required
 
 ### Typography
 #### Classes
-**Headlines:** .h1, .h2, .h3, .h4
-**Subtitles:** .st1, .st2
-**Body text:** .body1, .body2, .body3, .body4
-**Terminal font:** .font_math
+
+ - **Headlines:** .h1, .h2, .h3, .h4
+ - **Subtitles:** .st1, .st2
+ - **Body text:** .body1, .body2, .body3, .body4
+ - **Terminal font:** .font_math
+
 #### Positioning
 .text-align_left, .text-align_center, .text-align_right
 
@@ -64,8 +66,8 @@ ui.setTheme(EThemeType.dark)
 
 Relevant to the theme
 
---contrast-[1-6]
---line-[1-7]
+ - --contrast-[1-6]
+ - --line-[1-7]
 
 ### Avatar
 ```
@@ -73,11 +75,11 @@ Relevant to the theme
 ```
 **Props:**
 
-background: string
-symbol: string | false
-size: number [1-4]
-variant: EAvatarShape [circle, squircle]
-isOnline: boolean
+ - background: string
+ - symbol: string | false
+ - size: number [1-4]
+ - variant: EAvatarShape [circle, squircle]
+ - isOnline: boolean
 
 ### Button
 ```
@@ -85,13 +87,13 @@ isOnline: boolean
 ```
 **Props:**
 
-variant: EButtonVariant [outlined, outlined2, filled, text, text2]
-isActive: boolean
-isRounded: boolean
-isStretched: boolean
-isMarginHorizontal: boolean
-isMarginVertical: boolean
-isHoverPointer: boolean
+ - variant: EButtonVariant [outlined, outlined2, filled, text, text2]
+ - isActive: boolean
+ - isRounded: boolean
+ - isStretched: boolean
+ - isMarginHorizontal: boolean
+ - isMarginVertical: boolean
+ - isHoverPointer: boolean
 
 ### Checkbox
 ```
@@ -99,9 +101,9 @@ isHoverPointer: boolean
 ```
 **Props:**
 
-state: boolean \*
-isActive: boolean
-isOutlined: boolean
+ - state: boolean \*
+ - isActive: boolean
+ - isOutlined: boolean
 
 ### Input
 ```
@@ -109,15 +111,15 @@ isOutlined: boolean
 ```
 **Props:**
 
-value: string \*
-label: string | false
-placeholder: string
-isActive: boolean
-incorrect: string | false
-isStretched: boolean
-isRounded: boolean
-rightLabel: string | false
-isPassword: boolean
+ - value: string \*
+ - label: string | false
+ - placeholder: string
+ - isActive: boolean
+ - incorrect: string | false
+ - isStretched: boolean
+ - isRounded: boolean
+ - rightLabel: string | false
+ - isPassword: boolean
 
 ### Loader
 ```
@@ -125,7 +127,7 @@ isPassword: boolean
 ```
 **Props:**
 
-isContrast: boolean
+ - isContrast: boolean
 
 ### Paper
 ```
@@ -139,13 +141,13 @@ isContrast: boolean
 ```
 **Props:**
 
-isRounded: boolean
-isShadow: boolean
-isShadowStrong: boolean
-isColumn: boolean
-isPadding: boolean
-isCenter: boolean
-isBackground: boolean
+ - isRounded: boolean
+ - isShadow: boolean
+ - isShadowStrong: boolean
+ - isColumn: boolean
+ - isPadding: boolean
+ - isCenter: boolean
+ - isBackground: boolean
 
 ### Switcher
 ```
@@ -153,8 +155,8 @@ isBackground: boolean
 ```
 **Props:**
 
-state: boolean \*
-isActive: boolean
+ - state: boolean \*
+ - isActive: boolean
 
 ### Tooltip
 ```
@@ -164,10 +166,10 @@ isActive: boolean
 ```
 **Props:**
 
-text: string
-position: ETooltipPosition [bottom, right]
-style: string
-classes: string
+ - text: string
+ - position: ETooltipPosition [bottom, right]
+ - style: string
+ - classes: string
 
 ### Other classes
 
