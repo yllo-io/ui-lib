@@ -47,7 +47,7 @@
     </Paper>
     <Paper isCenter isPadding>
         <Loader />
-        <Loader contrast />
+        <Loader isContrast />
     </Paper>
     <Paper isCenter isPadding>
         <Checkbox bind:state={checkboxState} isActive={true} on:change={(e) => console.log('checkbox on change, state:', e.detail)} />
