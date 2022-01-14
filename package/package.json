@@ -1,6 +1,6 @@
 {
   "name": "@yllo/ui-lib",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "ui-lib",
   "main": "index.ts",
   "types": "index.d.ts",
@@ -21,6 +21,7 @@
   },
   "author": "yllo",
   "license": "ISC",
+  "readme": "README.md",
   "bugs": {
     "url": "https://github.com/yllo-io/ui-lib/issues"
   },
