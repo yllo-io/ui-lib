@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/yllo-io/ui-lib/issues"
   },
-  "homepage": "https://github.com/yllo-io/ui-lib#readme",
+  "homepage": "https://github.com/yllo-io/ui-lib/blob/main/package/README.md",
   "dependencies": {
     "css-loader": "^6.5.1",
     "style-loader": "^3.3.1",
