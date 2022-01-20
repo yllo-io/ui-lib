@@ -1,6 +1,6 @@
 {
   "name": "@yllo/ui-lib",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "ui-lib",
   "main": "index.ts",
   "types": "index.d.ts",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/yllo-io/ui-lib/blob/main/package/README.md",
   "dependencies": {
+    "@imask/svelte": "^6.2.2",
     "css-loader": "^6.5.1",
     "style-loader": "^3.3.1",
     "svelte-loader": "^3.1.2",

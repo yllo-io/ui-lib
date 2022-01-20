@@ -10,14 +10,16 @@
 
 <script lang="ts">
     import { createEventDispatcher } from 'svelte'
+    import { _theme } from '../../theme'
 
     export let variant: EButtonVariant = EButtonVariant.outlined
-    export let isRounded: boolean = true
+    export let isRounded: boolean
     export let isStretched: boolean = false
     export let isActive: boolean = true
     export let isMarginHorizontal: boolean = false
     export let isMarginVertical: boolean = false
     export let isHoverPointer: boolean = false
+    export let minWidth: string | false = false
 
     const dispatch = createEventDispatcher()
 </script>
@@ -27,8 +29,9 @@
         if (isActive) dispatch('click', event)
     }}
     class="button button_variant_{variant} noselect"
+    style={minWidth ? 'min-width: ' + minWidth : ''}
     class:stretched={isStretched}
-    class:rounded={isRounded}
+    class:rounded={isRounded === undefined ? $_theme.isRounded : isRounded}
     class:disabled={!isActive}
     class:margin_horizontal={isMarginHorizontal}
     class:margin_vertical={isMarginVertical}

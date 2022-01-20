@@ -1,11 +1,11 @@
 import { SvelteComponent } from 'svelte'
-import { EThemeType } from './UI/main.ts'
+import { ThemeOptions, EThemeType } from './UI/types.ts'
 import { EButtonVariant } from './UI/components/Button/Button.svelte'
 import { EAvatarShape } from './UI/components/Avatar/Avatar.svelte'
 import { ETooltipPosition } from './UI/components/Tooltip/Tooltip.svelte'
 
-export { EThemeType }
-export declare function setTheme(theme: EThemeType): void
+export { ThemeOptions, EThemeType }
+export declare function setThemeOptions(newThemeOptions: ThemeOptions): void
 export declare const Paper: typeof SvelteComponent
 export { EButtonVariant }
 export declare const Button: typeof SvelteComponent

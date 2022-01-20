@@ -14,7 +14,12 @@
     import ChangeThemeButton from '../ChangeThemeButton/ChangeThemeButton.svelte'
 
     let themeType: EThemeType = EThemeType.dark
-    ui.setTheme(EThemeType.dark)
+    ui.setThemeOptions({
+        themeType: themeType,
+        rounded: false,
+        shadow: false,
+        border: true,
+    })
 
     let switcherState: boolean = false
     $: console.log('reisActive switcherState', switcherState)
