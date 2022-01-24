@@ -3,7 +3,7 @@ import { ThemeOptions, EThemeType } from './types'
 import { _theme } from './theme'
 
 export const setThemeOptions = (newThemeOptions: ThemeOptions): void => {
-    console.log('setThemeOptions', newThemeOptions)
+    // console.log('setThemeOptions', newThemeOptions)
     const theme = get(_theme)
     if (theme.themeType !== newThemeOptions.themeType) {
         if (newThemeOptions.themeType === EThemeType.light) setRootVariables(themeVariablesLight)
@@ -50,6 +50,9 @@ const themeVariablesLight: Variable[] = [
     { key: '--line-5-rgb', value: '112, 112, 112' },
     { key: '--line-6-rgb', value: '52, 52, 52' },
     { key: '--line-7-rgb', value: '22, 22, 22' },
+
+    { key: '--shadow', value: '0px 4px 28px rgba(0, 0, 0, 0.11)' },
+    { key: '--shadow-strong', value: '0px 4px 30px rgba(0, 0, 0, 0.22)' },
 ]
 
 const themeVariablesDark: Variable[] = [
@@ -74,4 +77,7 @@ const themeVariablesDark: Variable[] = [
     { key: '--line-5-rgb', value: '214, 214, 214' },
     { key: '--line-6-rgb', value: '231, 231, 231' },
     { key: '--line-7-rgb', value: '246, 246, 246' },
+
+    { key: '--shadow', value: '0px 8px 51px rgba(0, 0, 0, 0.46)' },
+    { key: '--shadow-strong', value: '0px 8px 72px rgba(0, 0, 0, 0.84)' },
 ]

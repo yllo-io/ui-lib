@@ -8,6 +8,7 @@
 <script lang="ts">
     import { _theme } from '../../theme'
 
+    export let isHidden: boolean = false
     export let text: string = ''
     export let position: ETooltipPosition = ETooltipPosition.bottom
     export let style: string = ''
@@ -15,7 +16,11 @@
     export let isBorder: boolean
 </script>
 
-<div class="tooltip-wrapper {classes}" {style} class:border={isBorder === undefined ? $_theme.isBorder : isBorder}>
+{#if isHidden}
     <slot />
-    <div class="tooltip tooltip_position_{position} body4 font_math">{text}</div>
-</div>
+{:else}
+    <div class="tooltip-wrapper {classes}" {style}>
+        <slot />
+        <div class="tooltip tooltip_position_{position} body4 font_math" class:border={isBorder === undefined ? $_theme.isBorder : isBorder}>{@html text}</div>
+    </div>
+{/if}

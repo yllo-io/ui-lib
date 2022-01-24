@@ -4,8 +4,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--line-1);
+        color: #ffffff;
         font-family: var(--font-Medium);
+        background-size: cover;
     }
     &.avatar_variant_0 > .avatar__inner {
         border-radius: 50%;
