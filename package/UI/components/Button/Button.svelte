@@ -21,13 +21,28 @@
     export let isHoverPointer: boolean = false
     export let minWidth: string | false = false
     export let classes: string = ''
+    export let isClickAnimation: boolean = true
 
     const dispatch = createEventDispatcher()
+
+    let clickAnimation: boolean = false
+    let animationTimeout: NodeJS.Timer
 </script>
 
 <div
     on:click={(event) => {
-        if (isActive) dispatch('click', event)
+        if (isActive) {
+            if (isClickAnimation) {
+                clickAnimation = true
+                clearTimeout(animationTimeout)
+                animationTimeout = setTimeout(() => {
+                    clickAnimation = false
+                    dispatch('click', event)
+                }, 200)
+            } else {
+                dispatch('click', event)
+            }
+        }
     }}
     class="button button_variant_{variant} noselect {classes}"
     style={minWidth ? 'min-width: ' + minWidth : ''}
@@ -37,6 +52,7 @@
     class:margin_horizontal={isMarginHorizontal}
     class:margin_vertical={isMarginVertical}
     class:hover_pointer={isHoverPointer}
+    class:click-animation={clickAnimation}
 >
     <slot />
 </div>

@@ -19,6 +19,6 @@
 {:else}
     <div class="tooltip-wrapper {classes}" {style}>
         <slot />
-        <div class="tooltip tooltip_position_{position} body2 font_math" class:border={isBorder}>{@html text}</div>
+        <div class="tooltip tooltip_position_{position} body2" class:border={isBorder}>{@html text}</div>
     </div>
 {/if}

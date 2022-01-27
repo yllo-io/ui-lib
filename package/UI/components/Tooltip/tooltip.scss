@@ -3,11 +3,12 @@
     .tooltip {
         display: none;
         color: var(--line-7);
-        padding: 6px 12px;
+        padding: 6px 6px;
         text-align: center;
         border-radius: 3px;
         background: var(--line-1);
-        width: fit-content;
+        width: max-content;
+        z-index: 1;
     }
     &:hover > .tooltip.tooltip_position_0 {
         display: block;

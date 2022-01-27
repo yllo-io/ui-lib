@@ -22,6 +22,11 @@
     margin-left: 8px;
     margin-right: 8px;
 }
+.button.click-animation {
+    animation-name: button-click;
+    animation-duration: 0.2s;
+    animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+}
 
 .button_variant_0 {
     color: var(--line-7);
@@ -82,4 +87,16 @@
 }
 .button_variant_4:not(.disabled):hover {
     color: var(--line-7);
+}
+
+@keyframes button-click {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(0.96, 0.96);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
 }
