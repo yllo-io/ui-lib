@@ -20,6 +20,7 @@
     export let isMarginVertical: boolean = false
     export let isHoverPointer: boolean = false
     export let minWidth: string | false = false
+    export let classes: string = ''
 
     const dispatch = createEventDispatcher()
 </script>
@@ -28,10 +29,10 @@
     on:click={(event) => {
         if (isActive) dispatch('click', event)
     }}
-    class="button button_variant_{variant} noselect"
+    class="button button_variant_{variant} noselect {classes}"
     style={minWidth ? 'min-width: ' + minWidth : ''}
     class:stretched={isStretched}
-    class:rounded={isRounded === undefined ? $_theme.isRounded : isRounded}
+    class:button_rounded={isRounded === undefined ? $_theme.isRounded : isRounded}
     class:disabled={!isActive}
     class:margin_horizontal={isMarginHorizontal}
     class:margin_vertical={isMarginVertical}

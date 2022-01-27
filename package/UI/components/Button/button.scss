@@ -8,6 +8,9 @@
     font-size: 13px;
     font-family: var(--font-Medium);
 }
+.button.button_rounded {
+    border-radius: 16px;
+}
 .button.stretched {
     width: -webkit-fill-available;
 }

@@ -15,6 +15,12 @@
     export let imaskOptions: any = false
     export let autocomplete: string = 'off'
 
+    export function focus() {
+        input.focus()
+    }
+
+    let input: HTMLElement
+
     $: themeIsRounded = isRounded === undefined ? $_theme.isRounded : isRounded
 
     let passwordHidden: boolean = true
@@ -26,15 +32,37 @@
     {/if}
     {#if isPassword}
         {#if passwordHidden}
-            <input type="password" bind:value on:input on:change {placeholder} disabled={!isActive} class:rounded_light={themeIsRounded} />
+            <input
+                type="password"
+                bind:value
+                bind:this={input}
+                on:keyup
+                on:input
+                on:change
+                {placeholder}
+                disabled={!isActive}
+                class:rounded_light={themeIsRounded}
+            />
         {:else}
-            <input type="text" bind:value on:input on:change {placeholder} disabled={!isActive} class:rounded_light={themeIsRounded} />
+            <input
+                type="text"
+                bind:value
+                bind:this={input}
+                on:keyup
+                on:input
+                on:change
+                {placeholder}
+                disabled={!isActive}
+                class:rounded_light={themeIsRounded}
+            />
         {/if}
     {:else if isNumber}
         {#if imaskOptions}
             <input
                 type="number"
                 bind:value
+                bind:this={input}
+                on:keyup
                 on:input
                 on:change
                 use:imask={imaskOptions}
@@ -44,12 +72,25 @@
                 class:rounded_light={themeIsRounded}
             />
         {:else}
-            <input type="number" bind:value on:input on:change {autocomplete} {placeholder} disabled={!isActive} class:rounded_light={themeIsRounded} />
+            <input
+                type="number"
+                bind:value
+                bind:this={input}
+                on:keyup
+                on:input
+                on:change
+                {autocomplete}
+                {placeholder}
+                disabled={!isActive}
+                class:rounded_light={themeIsRounded}
+            />
         {/if}
     {:else if imaskOptions}
         <input
             type="text"
             bind:value
+            bind:this={input}
+            on:keyup
             on:input
             on:change
             use:imask={imaskOptions}
@@ -59,7 +100,18 @@
             class:rounded_light={themeIsRounded}
         />
     {:else}
-        <input type="text" bind:value on:input on:change {autocomplete} {placeholder} disabled={!isActive} class:rounded_light={themeIsRounded} />
+        <input
+            type="text"
+            bind:value
+            bind:this={input}
+            on:keyup
+            on:input
+            on:change
+            {autocomplete}
+            {placeholder}
+            disabled={!isActive}
+            class:rounded_light={themeIsRounded}
+        />
     {/if}
     {#if rightLabel || isPassword}
         <div class="right">
