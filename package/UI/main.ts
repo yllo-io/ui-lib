@@ -34,6 +34,12 @@ const themeVariablesLight: Variable[] = [
     { key: '--contrast-3', value: '#2168ef' },
     { key: '--contrast-4', value: '#f1c636' },
     { key: '--contrast-6', value: '#00cb99' },
+    
+    { key: '--contrast-1-rgb', value: '14, 165, 128' },
+    { key: '--contrast-2-rgb', value: '205, 86, 84' },
+    { key: '--contrast-3-rgb', value: '33, 104, 239' },
+    { key: '--contrast-4-rgb', value: '241, 198, 54' },
+    { key: '--contrast-6-rgb', value: '0, 203, 153' },
 
     { key: '--line-1', value: '#f6f6f6' },
     { key: '--line-2', value: '#e7e7e7' },
@@ -61,6 +67,12 @@ const themeVariablesDark: Variable[] = [
     { key: '--contrast-3', value: '#58AFFF' },
     { key: '--contrast-4', value: '#FFE079' },
     { key: '--contrast-6', value: '#2CFFCC' },
+    
+    { key: '--contrast-1-rgb', value: '44, 255, 204' },
+    { key: '--contrast-2-rgb', value: '255, 116, 114' },
+    { key: '--contrast-3-rgb', value: '88, 175, 255' },
+    { key: '--contrast-4-rgb', value: '255, 224, 121' },
+    { key: '--contrast-6-rgb', value: '44, 255, 204' },
 
     { key: '--line-1', value: '#161616' },
     { key: '--line-2', value: '#343434' },

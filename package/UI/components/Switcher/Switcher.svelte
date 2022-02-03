@@ -3,6 +3,7 @@
 
     export let state: boolean
     export let isActive: boolean = true
+    export let isBinding: boolean = false
 
     const dispatch = createEventDispatcher()
 
@@ -44,7 +45,7 @@
     class:disabled={!isActive}
     on:click={() => {
         if (isActive) {
-            state = !state
+            if (isBinding) state = !state
             dispatch('change', state)
         }
     }}
