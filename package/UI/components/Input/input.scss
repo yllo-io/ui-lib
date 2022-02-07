@@ -3,6 +3,12 @@
     &.stretched {
         width: -webkit-fill-available;
     }
+    &.centered input {
+        text-align: center;
+    }
+    &.centered input::placeholder {
+        text-align: center;
+    }
     input {
         width: -webkit-fill-available;
         padding: 7px 10px;

@@ -14,6 +14,7 @@
     export let isNumber: boolean = false
     export let imaskOptions: any = false
     export let autocomplete: string = 'off'
+    export let isCentered: boolean = false
 
     export function focus() {
         input.focus()
@@ -26,7 +27,7 @@
     let passwordHidden: boolean = true
 </script>
 
-<div class="input" class:incorrect class:disabled={!isActive} class:stretched={isStretched}>
+<div class="input" class:incorrect class:disabled={!isActive} class:stretched={isStretched} class:centered={isCentered}>
     {#if label}
         <span class="input__label">{label}</span>
     {/if}
@@ -37,8 +38,10 @@
                 bind:value
                 bind:this={input}
                 on:keyup
+                on:keydown
                 on:input
                 on:change
+                on:click
                 {placeholder}
                 disabled={!isActive}
                 class:rounded_light={themeIsRounded}
@@ -49,8 +52,10 @@
                 bind:value
                 bind:this={input}
                 on:keyup
+                on:keydown
                 on:input
                 on:change
+                on:click
                 {placeholder}
                 disabled={!isActive}
                 class:rounded_light={themeIsRounded}
@@ -63,8 +68,10 @@
                 bind:value
                 bind:this={input}
                 on:keyup
+                on:keydown
                 on:input
                 on:change
+                on:click
                 use:imask={imaskOptions}
                 {autocomplete}
                 {placeholder}
@@ -77,8 +84,10 @@
                 bind:value
                 bind:this={input}
                 on:keyup
+                on:keydown
                 on:input
                 on:change
+                on:click
                 {autocomplete}
                 {placeholder}
                 disabled={!isActive}
@@ -91,8 +100,10 @@
             bind:value
             bind:this={input}
             on:keyup
+            on:keydown
             on:input
             on:change
+            on:click
             use:imask={imaskOptions}
             {autocomplete}
             {placeholder}
@@ -105,8 +116,10 @@
             bind:value
             bind:this={input}
             on:keyup
+            on:keydown
             on:input
             on:change
+            on:click
             {autocomplete}
             {placeholder}
             disabled={!isActive}

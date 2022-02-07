@@ -1,32 +1,32 @@
 :root {
-    --contrast-1: #0ea580;
-    --contrast-2: #cd5654;
-    --contrast-3: #2168ef;
-    --contrast-4: #f1c636;
-    --contrast-6: #00cb99;
+    --contrast-1: #2CFFCC;
+    --contrast-2: #FF7472;
+    --contrast-3: #58AFFF;
+    --contrast-4: #FFE079;
+    --contrast-6: #2CFFCC;
     
-    --contrast-1-rgb: rgb(14, 165, 128);
-    --contrast-2-rgb: rgb(205, 86, 84);
-    --contrast-3-rgb: rgb(33, 104, 239);
-    --contrast-4-rgb: rgb(241, 198, 54);
-    --contrast-6-rgb: rgb(0, 203, 153);
+    --contrast-1-rgb: 44, 255, 204;
+    --contrast-2-rgb: 255, 116, 114;
+    --contrast-3-rgb: 88, 175, 255;
+    --contrast-4-rgb: 255, 224, 121;
+    --contrast-6-rgb: 44, 255, 204;
 
-    --line-1: #f6f6f6; /* m1 */
-    --line-2: #e7e7e7; /* m1.5 */
-    --line-3: #d6d6d6; /* m1.7 */
+    --line-1: #161616; /* m1 */
+    --line-2: #343434; /* m1.5 */
+    --line-3: #707070; /* m1.7 */
     --line-4: #989898; /* m2 */
-    --line-5: #707070; /* m3 */
-    --line-6: #343434; /* m3.5 */
-    --line-7: #161616; /* m4 */
+    --line-5: #d6d6d6; /* m3 */
+    --line-6: #e7e7e7; /* m3.5 */
+    --line-7: #f6f6f6; /* m4 */
 
-    --line-1-rgb: 246, 246, 246;
-    --line-2-rgb: 231, 231, 231;
-    --line-3-rgb: 214, 214, 214;
+    --line-1-rgb: 22, 22, 22;
+    --line-2-rgb: 52, 52, 52;
+    --line-3-rgb: 112, 112, 112;
     --line-4-rgb: 152, 152, 152;
-    --line-5-rgb: 112, 112, 112;
-    --line-6-rgb: 52, 52, 52;
-    --line-7-rgb: 22, 22, 22;
+    --line-5-rgb: 214, 214, 214;
+    --line-6-rgb: 231, 231, 231;
+    --line-7-rgb: 246, 246, 246;
 
-    --shadow: 0px 4px 28px rgba(0, 0, 0, 0.11);
-    --shadow-strong: 0px 4px 30px rgba(0, 0, 0, 0.22);
+    --shadow: 0px 8px 51px rgba(0, 0, 0, 0.46);
+    --shadow-strong: 0px 8px 72px rgba(0, 0, 0, 0.84);
 }

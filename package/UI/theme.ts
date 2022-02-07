@@ -3,9 +3,9 @@ import { ThemeOptions, EThemeType } from './types'
 
 function createStore() {
     const { subscribe, update, set } = writable(<ThemeOptions>{
-        themeType: EThemeType.light,
+        themeType: EThemeType.dark,
         isRounded: false,
-        isShadow: false,
+        isShadow: true,
         isBorder: true,
     })
     return {
