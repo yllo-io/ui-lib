@@ -11,4 +11,5 @@ export { default as Avatar } from './UI/components/Avatar/Avatar.svelte'
 export { EAvatarShape as EAvatarShape } from './UI/components/Avatar/Avatar.svelte'
 export { default as Tooltip } from './UI/components/Tooltip/Tooltip.svelte'
 export { ETooltipPosition as ETooltipPosition } from './UI/components/Tooltip/Tooltip.svelte'
+export { default as Tabs } from './UI/components/Tabs/Tabs.svelte'
 export default actions

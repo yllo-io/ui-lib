@@ -1,23 +1,23 @@
 :root {
-    --contrast-1: #2CFFCC;
-    --contrast-2: #FF7472;
-    --contrast-3: #58AFFF;
-    --contrast-4: #FFE079;
-    --contrast-6: #2CFFCC;
-    
+    --contrast-1: #2cffcc;
+    --contrast-2: #ff7472;
+    --contrast-3: #58afff;
+    --contrast-4: #ffe079;
+    --contrast-6: #2cffcc;
+
     --contrast-1-rgb: 44, 255, 204;
     --contrast-2-rgb: 255, 116, 114;
     --contrast-3-rgb: 88, 175, 255;
     --contrast-4-rgb: 255, 224, 121;
     --contrast-6-rgb: 44, 255, 204;
 
-    --line-1: #161616; /* m1 */
-    --line-2: #343434; /* m1.5 */
-    --line-3: #707070; /* m1.7 */
-    --line-4: #989898; /* m2 */
-    --line-5: #d6d6d6; /* m3 */
-    --line-6: #e7e7e7; /* m3.5 */
-    --line-7: #f6f6f6; /* m4 */
+    --line-1: #161616; // 7 m4
+    --line-2: #343434; // 6 m3.5
+    --line-3: #707070; // 5 m3
+    --line-4: #989898; // 4 m2
+    --line-5: #d6d6d6; // 3 m1.7
+    --line-6: #e7e7e7; // 2 m1.5
+    --line-7: #f6f6f6; // 1 m1
 
     --line-1-rgb: 22, 22, 22;
     --line-2-rgb: 52, 52, 52;
