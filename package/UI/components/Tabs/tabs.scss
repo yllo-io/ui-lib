@@ -15,5 +15,8 @@
         &.active {
             background: var(--line-1);
         }
+        &:not(.active) {
+            cursor: pointer;
+        }
     }
 }
