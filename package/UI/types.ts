@@ -3,6 +3,7 @@ export type ThemeOptions = {
     isRounded: boolean
     isShadow: boolean
     isBorder: boolean
+    isInteractiveCursor: boolean
 }
 
 export enum EThemeType {

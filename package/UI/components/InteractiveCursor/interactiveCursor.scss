@@ -1,0 +1,29 @@
+.interactive-cursor-hover {
+    cursor: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(var(--line-7-rgb), 0.06);
+    display: none;
+    &.active {
+        display: block;
+        transform: translate(var(--translateX, 0), var(--translateY, 0));
+    }
+}
+
+.interactive-element {
+    cursor: none;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+    &:not(:hover) {
+        transition-property: transform;
+    }
+}
+
+.interactive-element-hover {
+    cursor: none;
+    border: none;
+    transform: translate(var(--translateX, 0), var(--translateY, 0)) scale(1.05, 1.05);
+}

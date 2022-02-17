@@ -7,10 +7,11 @@ function createStore() {
         isRounded: false,
         isShadow: true,
         isBorder: true,
+        isInteractiveCursor: true,
     })
     return {
         subscribe,
-        set
+        set,
     }
 }
 
