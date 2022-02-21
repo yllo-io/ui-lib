@@ -18,3 +18,4 @@ export declare const Avatar: typeof SvelteComponent
 export { ETooltipPosition }
 export declare const Tooltip: typeof SvelteComponent
 export declare const Tabs: typeof SvelteComponent
+export declare function setCursor(newCursor: string): void

@@ -1,0 +1,41 @@
+.interactive-element {
+    cursor: none;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+    &:not(:hover) {
+        transition-property: transform;
+    }
+}
+
+.interactive-element-hover {
+    cursor: none;
+    border-color: transparent !important;
+    transform: translate(var(--translateX, 0), var(--translateY, 0)) scale(1.05, 1.05);
+}
+
+.interactive-cursor {
+    position: absolute;
+    z-index: 999999;
+    height: var(--height, 14px);
+    width: var(--width, 14px);
+    left: var(--left, -14px);
+    pointer-events: none;
+    top: var(--top, -14px);
+    transform: translate(var(--translateX, -50%), var(--translateY, -50%)) scale(var(--scale, 1));
+    background-color: var(--line-7);
+
+    opacity: 0.3;
+    border-radius: var(--border-radius, 7px);
+
+    transition-timing-function: ease-out;
+    transition-property: opacity, border-radius;
+    transition-duration: 0.1s;
+
+    &.is-locked {
+        transition-property: width, height, left, top, opacity, border-radius;
+        opacity: 0.06;
+    }
+    &:not(.is-locked).hidden {
+        display: none;
+    }
+}

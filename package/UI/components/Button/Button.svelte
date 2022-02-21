@@ -11,7 +11,7 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte'
     import { _theme } from '../../theme'
-    import { interactiveCursor } from '../InteractiveCursor/interactiveCursor'
+    import { interactiveElement } from '../Cursor/interactiveCursor'
 
     export let variant: EButtonVariant = EButtonVariant.outlined
     export let isRounded: boolean
@@ -45,7 +45,7 @@
             }
         }
     }}
-    use:interactiveCursor={$_theme.isInteractiveCursor}
+    use:interactiveElement={$_theme.isInteractiveCursor && isActive}
     class="button button_variant_{variant} noselect {classes}"
     style={minWidth ? 'min-width: ' + minWidth : ''}
     class:stretched={isStretched}

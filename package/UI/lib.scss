@@ -1,4 +1,4 @@
-@import './components/Button/button';
+@import './components/Button/button'; 
 @import './components/Paper/paper';
 @import './components/Switcher/switcher';
 @import './components/Loader/loader';
@@ -8,7 +8,8 @@
 @import './components/Tooltip/tooltip';
 @import './components/Typography/typography';
 @import './components/Tabs/tabs';
-@import './components/InteractiveCursor/interactiveCursor';
+@import './components/Cursor/interactiveCursor';
+@import './components/Cursor/cursor';
 
 .color_contrast1 {
     color: var(--contrast-1);

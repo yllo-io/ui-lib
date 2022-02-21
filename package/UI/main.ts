@@ -1,9 +1,10 @@
 import { get } from 'svelte/store'
 import { ThemeOptions, EThemeType } from './types'
 import { _theme } from './theme'
+import { initInteractiveCursor, destroyInteractiveCursor } from './components/Cursor/interactiveCursor'
+import { setDefaultCursor } from './components/Cursor/cursor'
 
 export const setThemeOptions = (newThemeOptions: ThemeOptions): void => {
-    // console.log('setThemeOptions', newThemeOptions)
     const theme = get(_theme)
     if (theme.themeType !== newThemeOptions.themeType) {
         if (newThemeOptions.themeType === EThemeType.light) setRootVariables(themeVariablesLight)
@@ -11,6 +12,8 @@ export const setThemeOptions = (newThemeOptions: ThemeOptions): void => {
     }
 
     _theme.set(newThemeOptions)
+    if (newThemeOptions.isInteractiveCursor) initInteractiveCursor(newThemeOptions.isCircleCursor)
+    else destroyInteractiveCursor()
 
     function setRootVariables(variables: Variable[]) {
         variables.forEach((variable) => {
@@ -34,7 +37,7 @@ const themeVariablesLight: Variable[] = [
     { key: '--contrast-3', value: '#2168ef' },
     { key: '--contrast-4', value: '#f1c636' },
     { key: '--contrast-6', value: '#00cb99' },
-    
+
     { key: '--contrast-1-rgb', value: '14, 165, 128' },
     { key: '--contrast-2-rgb', value: '205, 86, 84' },
     { key: '--contrast-3-rgb', value: '33, 104, 239' },
@@ -67,7 +70,7 @@ const themeVariablesDark: Variable[] = [
     { key: '--contrast-3', value: '#58AFFF' },
     { key: '--contrast-4', value: '#FFE079' },
     { key: '--contrast-6', value: '#2CFFCC' },
-    
+
     { key: '--contrast-1-rgb', value: '44, 255, 204' },
     { key: '--contrast-2-rgb', value: '255, 116, 114' },
     { key: '--contrast-3-rgb', value: '88, 175, 255' },

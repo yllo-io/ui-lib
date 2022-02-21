@@ -4,6 +4,7 @@ export type ThemeOptions = {
     isShadow: boolean
     isBorder: boolean
     isInteractiveCursor: boolean
+    isCircleCursor: boolean
 }
 
 export enum EThemeType {
