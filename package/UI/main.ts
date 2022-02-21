@@ -1,7 +1,6 @@
 import { get } from 'svelte/store'
 import { ThemeOptions, EThemeType } from './types'
 import { _theme } from './theme'
-import { initInteractiveCursor, destroyInteractiveCursor } from './components/Cursor/interactiveCursor'
 import { setDefaultCursor } from './components/Cursor/cursor'
 
 export const setThemeOptions = (newThemeOptions: ThemeOptions): void => {
@@ -12,8 +11,9 @@ export const setThemeOptions = (newThemeOptions: ThemeOptions): void => {
     }
 
     _theme.set(newThemeOptions)
-    if (newThemeOptions.isInteractiveCursor) initInteractiveCursor(newThemeOptions.isCircleCursor)
-    else destroyInteractiveCursor()
+    if (!newThemeOptions.isInteractiveCursor) setDefaultCursor('var(--cursor-custom)', 'var(--cursor-custom-webkit)')
+    else if (newThemeOptions.isCircleCursor) setDefaultCursor('var(--cursor-circle)', 'var(--cursor-circle-webkit)')
+    else setDefaultCursor('var(--cursor-custom)', 'var(--cursor-custom-webkit)')
 
     function setRootVariables(variables: Variable[]) {
         variables.forEach((variable) => {
