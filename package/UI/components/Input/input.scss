@@ -81,4 +81,8 @@
     input[type='number'] {
         -moz-appearance: textfield;
     }
+
+    &.interactive-element-hover input {
+        border-color: transparent !important;
+    }
 }

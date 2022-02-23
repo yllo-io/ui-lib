@@ -1,5 +1,7 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte'
+    import { interactiveElement } from '../Cursor/interactiveCursor'
+    import { _theme } from '../../theme'
 
     export let state: boolean
     export let isActive: boolean = true
@@ -43,6 +45,7 @@
 <div
     class="switcher noselect"
     class:disabled={!isActive}
+    use:interactiveElement={{ isActive: $_theme.isInteractiveCursor && isActive }}
     on:click={() => {
         if (isActive) {
             if (isBinding) state = !state

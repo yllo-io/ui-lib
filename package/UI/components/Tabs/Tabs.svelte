@@ -1,5 +1,6 @@
 <script lang="ts">
     import { _theme } from '../../theme'
+    import { interactiveElement } from '../Cursor/interactiveCursor'
 
     export let tabs: string[] = []
     export let active: number = 0
@@ -10,6 +11,7 @@
     {#each tabs as tab, index}
         <div
             class="tabs__item"
+            use:interactiveElement={{ isActive: $_theme.isInteractiveCursor && active !== index }}
             class:rounded_light={isRounded === undefined ? $_theme.isRounded : isRounded}
             class:active={active === index}
             on:click={() => (active = index)}

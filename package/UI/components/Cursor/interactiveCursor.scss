@@ -7,9 +7,10 @@
     bottom: 0;
     background-color: rgba(var(--line-7-rgb), 0.06);
     display: none;
+    border-radius: var(--border-radius, 4px);
     &.active {
         display: block;
-        transform: translate(var(--translateX, 0), var(--translateY, 0));
+        transform: translate(var(--translateX, 0), var(--translateY, 0)) scale(var(--scale, 1), var(--scale, 1));
     }
 }
 
@@ -24,6 +25,9 @@
 
 .interactive-element-hover {
     cursor: none !important;
-    border-color: transparent !important;
     transform: translate(var(--translateX, 0), var(--translateY, 0)) scale(1.05, 1.05);
+}
+
+.interactive-element-hover * {
+    cursor: none !important;
 }

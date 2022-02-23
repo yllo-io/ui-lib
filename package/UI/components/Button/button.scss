@@ -9,6 +9,9 @@
     font-family: var(--font-Medium);
     position: relative;
 }
+.button.interactive-element-hover {
+    border-color: transparent !important;
+}
 .button.button_rounded {
     border-radius: 16px;
 }

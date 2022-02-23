@@ -1,6 +1,7 @@
 <script lang="ts">
     import { _theme } from '../../theme'
     import { imask } from '@imask/svelte'
+    import { interactiveElement } from '../Cursor/interactiveCursor'
 
     export let value: string = ''
     export let label: string | false = false
@@ -27,7 +28,14 @@
     let passwordHidden: boolean = true
 </script>
 
-<div class="input" class:incorrect class:disabled={!isActive} class:stretched={isStretched} class:centered={isCentered}>
+<div
+    class="input"
+    class:incorrect
+    class:disabled={!isActive}
+    class:stretched={isStretched}
+    class:centered={isCentered}
+    use:interactiveElement={{ isActive: $_theme.isInteractiveCursor && isActive, onClick: focus }}
+>
     {#if label}
         <span class="input__label">{label}</span>
     {/if}

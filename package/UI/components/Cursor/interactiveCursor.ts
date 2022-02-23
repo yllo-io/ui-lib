@@ -1,4 +1,4 @@
-export function interactiveElement(node: HTMLElement, isActive: boolean) {
+export function interactiveElement(node: HTMLElement, { isActive, onClick }: { isActive: boolean; onClick?: () => void }) {
     function onMousemove(event: MouseEvent) {
         const halfHeight: number = nodeRect.height / 2
         const topOffset: number = (event.y - nodeRect.top - halfHeight) / halfHeight
@@ -19,30 +19,46 @@ export function interactiveElement(node: HTMLElement, isActive: boolean) {
     }
 
     function onMouseleave() {
-        hover.classList.remove('active')
-        node.classList.remove('interactive-element-hover')
+        if (hover) hover.classList.remove('active')
+        if (node) node.classList.remove('interactive-element-hover')
     }
 
+    // function onDOMNodeRemoved(event) {
+    //     if (isActiveState && event.target === hover) {
+    //         deactivation()
+    //         activation()
+    //     }
+    // }
+
     function activation() {
+        isActiveState = true
         hover = document.createElement('div')
         hover.classList.add('interactive-cursor-hover')
         const style: CSSStyleDeclaration = window.getComputedStyle(node)
         const borderRadius: string = style.getPropertyValue('border-radius')
-        hover.style.borderRadius = borderRadius
+        if (borderRadius !== '0px') hover.style.setProperty('--border-radius', borderRadius)
         node.appendChild(hover)
         node.classList.add('interactive-element')
 
         node.addEventListener('mousemove', onMousemove)
         node.addEventListener('mouseenter', onMouseenter)
         node.addEventListener('mouseleave', onMouseleave)
+        // node.addEventListener('DOMNodeRemoved', onDOMNodeRemoved)
+        if (onClick) node.addEventListener('click', onClick)
     }
 
     function deactivation() {
+        isActiveState = false
         node.removeEventListener('mousemove', onMousemove)
         node.removeEventListener('mouseenter', onMouseenter)
         node.removeEventListener('mouseleave', onMouseleave)
-        hover.remove()
-        node.classList.remove('interactive-element')
+        // node.removeEventListener('DOMNodeRemoved', onDOMNodeRemoved)
+        if (onClick) node.removeEventListener('click', onClick)
+        if (hover) hover.remove()
+        if (node) {
+            node.classList.remove('interactive-element')
+            node.classList.remove('interactive-element-hover')
+        }
     }
 
     let hover: HTMLElement
@@ -52,10 +68,9 @@ export function interactiveElement(node: HTMLElement, isActive: boolean) {
     if (isActiveState) activation()
 
     return {
-        update(isActive: boolean) {
+        update({ isActive, onClick }: { isActive: boolean; onClick?: () => void }) {
             if (!isActiveState && isActive) activation()
             else if (isActiveState && !isActive) deactivation()
-            isActiveState = isActive
         },
         destroy() {
             deactivation()

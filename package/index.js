@@ -13,4 +13,5 @@ export { default as Tooltip } from './UI/components/Tooltip/Tooltip.svelte'
 export { ETooltipPosition as ETooltipPosition } from './UI/components/Tooltip/Tooltip.svelte'
 export { default as Tabs } from './UI/components/Tabs/Tabs.svelte'
 export { setCursor } from './UI/components/Cursor/cursor'
+export { interactiveElement } from './UI/components/Cursor/interactiveCursor'
 export default actions

@@ -3,6 +3,7 @@ import { ThemeOptions, EThemeType } from './UI/types.ts'
 import { EButtonVariant } from './UI/components/Button/Button.svelte'
 import { EAvatarShape } from './UI/components/Avatar/Avatar.svelte'
 import { ETooltipPosition } from './UI/components/Tooltip/Tooltip.svelte'
+import { interactiveElement } from './UI/components/Cursor/interactiveCursor'
 
 export { ThemeOptions, EThemeType }
 export declare function setThemeOptions(newThemeOptions: ThemeOptions): void
@@ -19,3 +20,4 @@ export { ETooltipPosition }
 export declare const Tooltip: typeof SvelteComponent
 export declare const Tabs: typeof SvelteComponent
 export declare function setCursor(newCursor: string): void
+export declare function interactiveElement(node: HTMLElement, { isActive, onClick }: { isActive: boolean; onClick?: () => void })
