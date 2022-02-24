@@ -20,4 +20,7 @@ export { ETooltipPosition }
 export declare const Tooltip: typeof SvelteComponent
 export declare const Tabs: typeof SvelteComponent
 export declare function setCursor(newCursor: string): void
-export declare function interactiveElement(node: HTMLElement, { isActive, onClick }: { isActive: boolean; onClick?: () => void })
+export declare function interactiveElement(
+    node: HTMLElement,
+    { isActive, onClick, isCursorHover = true }: { isActive: boolean; onClick?: () => void; isCursorHover: boolean }
+)

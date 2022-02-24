@@ -12,8 +12,10 @@ export const setThemeOptions = (newThemeOptions: ThemeOptions): void => {
 
     _theme.set(newThemeOptions)
     if (!newThemeOptions.isInteractiveCursor) setDefaultCursor('var(--cursor-custom)', 'var(--cursor-custom-webkit)')
-    else if (newThemeOptions.isCircleCursor) setDefaultCursor('var(--cursor-circle)', 'var(--cursor-circle-webkit)')
-    else setDefaultCursor('var(--cursor-custom)', 'var(--cursor-custom-webkit)')
+    else if (newThemeOptions.isCircleCursor) {
+        if (newThemeOptions.themeType === EThemeType.light) setDefaultCursor('var(--cursor-circle-light)', 'var(--cursor-circle-light-webkit)')
+        else if (newThemeOptions.themeType === EThemeType.dark) setDefaultCursor('var(--cursor-circle-dark)', 'var(--cursor-circle-dark-webkit)')
+    } else setDefaultCursor('var(--cursor-custom)', 'var(--cursor-custom-webkit)')
 
     function setRootVariables(variables: Variable[]) {
         variables.forEach((variable) => {

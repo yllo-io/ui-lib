@@ -1,5 +1,5 @@
 .interactive-cursor-hover {
-    cursor: none !important;
+    // cursor: none !important;
     position: absolute;
     top: 0;
     left: 0;
@@ -15,7 +15,7 @@
 }
 
 .interactive-element {
-    cursor: none !important;
+    // cursor: none !important;
     transition-duration: 0.1s;
     transition-timing-function: ease-out;
     &:not(:hover) {
@@ -24,10 +24,15 @@
 }
 
 .interactive-element-hover {
-    cursor: none !important;
+    // cursor: none !important;
     transform: translate(var(--translateX, 0), var(--translateY, 0)) scale(1.05, 1.05);
 }
 
 .interactive-element-hover * {
-    cursor: none !important;
+    // cursor: none !important;
+}
+
+.interactive-cursor-hover_disabled.interactive-cursor-hover,
+.interactive-cursor-hover_disabled .interactive-cursor-hover {
+    display: none;
 }

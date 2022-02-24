@@ -1,12 +1,17 @@
-export function interactiveElement(node: HTMLElement, { isActive, onClick }: { isActive: boolean; onClick?: () => void }) {
+export function interactiveElement(
+    node: HTMLElement,
+    { isActive, onClick, isCursorHover = true }: { isActive: boolean; onClick?: () => void; isCursorHover: boolean }
+) {
     function onMousemove(event: MouseEvent) {
         const halfHeight: number = nodeRect.height / 2
         const topOffset: number = (event.y - nodeRect.top - halfHeight) / halfHeight
         const halfWidth: number = nodeRect.width / 2
         const leftOffset: number = (event.x - nodeRect.left - halfWidth) / halfWidth
 
-        hover.style.setProperty('--translateX', `${Math.round(-leftOffset * 3)}px`)
-        hover.style.setProperty('--translateY', `${Math.round(-topOffset)}px`)
+        if (isCursorHover) {
+            hover.style.setProperty('--translateX', `${Math.round(-leftOffset * 3)}px`)
+            hover.style.setProperty('--translateY', `${Math.round(-topOffset)}px`)
+        }
 
         node.style.setProperty('--translateX', `${Math.round(leftOffset * 6)}px`)
         node.style.setProperty('--translateY', `${Math.round(topOffset * 4)}px`)
@@ -14,7 +19,7 @@ export function interactiveElement(node: HTMLElement, { isActive, onClick }: { i
 
     function onMouseenter() {
         nodeRect = node.getBoundingClientRect()
-        hover.classList.add('active')
+        if (hover) hover.classList.add('active')
         node.classList.add('interactive-element-hover')
     }
 
@@ -32,14 +37,17 @@ export function interactiveElement(node: HTMLElement, { isActive, onClick }: { i
 
     function activation() {
         isActiveState = true
-        hover = document.createElement('div')
-        hover.classList.add('interactive-cursor-hover')
-        const style: CSSStyleDeclaration = window.getComputedStyle(node)
-        const borderRadius: string = style.getPropertyValue('border-radius')
-        if (borderRadius !== '0px') hover.style.setProperty('--border-radius', borderRadius)
-        node.appendChild(hover)
-        node.classList.add('interactive-element')
 
+        if (isCursorHover) {
+            hover = document.createElement('div')
+            hover.classList.add('interactive-cursor-hover')
+            const style: CSSStyleDeclaration = window.getComputedStyle(node)
+            const borderRadius: string = style.getPropertyValue('border-radius')
+            if (borderRadius !== '0px') hover.style.setProperty('--border-radius', borderRadius)
+            node.appendChild(hover)
+        }
+
+        node.classList.add('interactive-element')
         node.addEventListener('mousemove', onMousemove)
         node.addEventListener('mouseenter', onMouseenter)
         node.addEventListener('mouseleave', onMouseleave)
@@ -68,7 +76,7 @@ export function interactiveElement(node: HTMLElement, { isActive, onClick }: { i
     if (isActiveState) activation()
 
     return {
-        update({ isActive, onClick }: { isActive: boolean; onClick?: () => void }) {
+        update({ isActive, onClick, isCursorHover = true }: { isActive: boolean; onClick?: () => void; isCursorHover: boolean }) {
             if (!isActiveState && isActive) activation()
             else if (isActiveState && !isActive) deactivation()
         },
