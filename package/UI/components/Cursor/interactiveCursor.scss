@@ -25,7 +25,7 @@
 
 .interactive-element-hover {
     // cursor: none !important;
-    transform: translate(var(--translateX, 0), var(--translateY, 0)) scale(1.05, 1.05);
+    transform: translate(var(--translateX, 0), var(--translateY, 0)) scale(var(--scale, 1.05), var(--scale, 1.05));
 }
 
 .interactive-element-hover * {
@@ -35,4 +35,9 @@
 .interactive-cursor-hover_disabled.interactive-cursor-hover,
 .interactive-cursor-hover_disabled .interactive-cursor-hover {
     display: none;
+}
+.interactive-cursor-hover_disabled.interactive-element-hover,
+.interactive-cursor-hover_disabled .interactive-element-hover {
+    --translateX: 0 !important;
+    --translateY: 0 !important;
 }

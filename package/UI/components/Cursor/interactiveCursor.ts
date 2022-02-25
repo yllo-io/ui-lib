@@ -1,8 +1,9 @@
 export function interactiveElement(
     node: HTMLElement,
-    { isActive, onClick, isCursorHover = true }: { isActive: boolean; onClick?: () => void; isCursorHover: boolean }
+    { isActive, onClick, isCursorHover = true }: { isActive: boolean; onClick?: () => void; isCursorHover?: boolean }
 ) {
     function onMousemove(event: MouseEvent) {
+        console.log('onMousemove')
         const halfHeight: number = nodeRect.height / 2
         const topOffset: number = (event.y - nodeRect.top - halfHeight) / halfHeight
         const halfWidth: number = nodeRect.width / 2
@@ -18,6 +19,7 @@ export function interactiveElement(
     }
 
     function onMouseenter() {
+        console.log('onMouseenter')
         nodeRect = node.getBoundingClientRect()
         if (hover) hover.classList.add('active')
         node.classList.add('interactive-element-hover')
@@ -76,7 +78,7 @@ export function interactiveElement(
     if (isActiveState) activation()
 
     return {
-        update({ isActive, onClick, isCursorHover = true }: { isActive: boolean; onClick?: () => void; isCursorHover: boolean }) {
+        update({ isActive, onClick, isCursorHover = true }: { isActive: boolean; onClick?: () => void; isCursorHover?: boolean }) {
             if (!isActiveState && isActive) activation()
             else if (isActiveState && !isActive) deactivation()
         },
