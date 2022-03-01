@@ -3,23 +3,23 @@ export function interactiveElement(
     { isActive, onClick, isCursorHover = true }: { isActive: boolean; onClick?: () => void; isCursorHover?: boolean }
 ) {
     function onMousemove(event: MouseEvent) {
-        console.log('onMousemove')
-        const halfHeight: number = nodeRect.height / 2
-        const topOffset: number = (event.y - nodeRect.top - halfHeight) / halfHeight
-        const halfWidth: number = nodeRect.width / 2
-        const leftOffset: number = (event.x - nodeRect.left - halfWidth) / halfWidth
+        if (nodeRect) {
+            const halfHeight: number = nodeRect.height / 2
+            const topOffset: number = (event.y - nodeRect.top - halfHeight) / halfHeight
+            const halfWidth: number = nodeRect.width / 2
+            const leftOffset: number = (event.x - nodeRect.left - halfWidth) / halfWidth
 
-        if (isCursorHover) {
-            hover.style.setProperty('--translateX', `${Math.round(-leftOffset * 3)}px`)
-            hover.style.setProperty('--translateY', `${Math.round(-topOffset)}px`)
+            if (isCursorHover) {
+                hover.style.setProperty('--translateX', `${Math.round(-leftOffset * 3)}px`)
+                hover.style.setProperty('--translateY', `${Math.round(-topOffset)}px`)
+            }
+
+            node.style.setProperty('--translateX', `${Math.round(leftOffset * 6)}px`)
+            node.style.setProperty('--translateY', `${Math.round(topOffset * 4)}px`)
         }
-
-        node.style.setProperty('--translateX', `${Math.round(leftOffset * 6)}px`)
-        node.style.setProperty('--translateY', `${Math.round(topOffset * 4)}px`)
     }
 
     function onMouseenter() {
-        console.log('onMouseenter')
         nodeRect = node.getBoundingClientRect()
         if (hover) hover.classList.add('active')
         node.classList.add('interactive-element-hover')
