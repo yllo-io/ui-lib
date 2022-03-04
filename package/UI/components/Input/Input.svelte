@@ -34,7 +34,7 @@
     class:disabled={!isActive}
     class:stretched={isStretched}
     class:centered={isCentered}
-    use:interactiveElement={{ isActive: $_theme.isInteractiveCursor && isActive, onClick: focus }}
+    use:interactiveElement={{ isActive: $_theme.isInteractiveCursor && isActive }}
 >
     {#if label}
         <span class="input__label">{label}</span>

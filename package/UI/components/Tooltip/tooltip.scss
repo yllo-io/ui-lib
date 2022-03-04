@@ -10,14 +10,14 @@
         width: max-content;
         z-index: 1;
     }
-    &:hover > .tooltip.tooltip_position_0 {
+    &:hover > .tooltip.tooltip_position_0:not(:hover) {
         display: block;
         position: absolute;
         top: calc(100% + 4px);
         left: 50%;
         transform: translateX(-50%);
     }
-    &:hover > .tooltip.tooltip_position_1 {
+    &:hover > .tooltip.tooltip_position_1:not(:hover) {
         display: block;
         position: absolute;
         left: calc(100% + 10px);

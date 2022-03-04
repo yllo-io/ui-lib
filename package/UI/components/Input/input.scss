@@ -85,4 +85,7 @@
     &.interactive-element-hover input {
         border-color: transparent !important;
     }
+    &.interactive-element .interactive-cursor-hover {
+        z-index: -1;
+    }
 }
