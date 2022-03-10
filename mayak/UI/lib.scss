@@ -1,0 +1,100 @@
+@import './components/Button/button'; 
+@import './components/Paper/paper';
+@import './components/Switcher/switcher';
+@import './components/Loader/loader';
+@import './components/Checkbox/checkbox';
+@import './components/Input/input';
+@import './components/Avatar/avatar';
+@import './components/Tooltip/tooltip';
+@import './components/Typography/typography';
+@import './components/Tabs/tabs';
+@import './components/Cursor/interactiveCursor';
+@import './components/Cursor/cursor';
+
+.color_contrast1 {
+    color: var(--contrast-1);
+}
+.color_contrast2 {
+    color: var(--contrast-2);
+}
+.color_contrast3 {
+    color: var(--contrast-3);
+}
+.color_contrast4 {
+    color: var(--contrast-4);
+}
+.color_contrast6 {
+    color: var(--contrast-6);
+}
+
+.color_line1 {
+    color: var(--line-1);
+}
+.color_line2 {
+    color: var(--line-2);
+}
+.color_line3 {
+    color: var(--line-3);
+}
+.color_line4 {
+    color: var(--line-4);
+}
+.color_line5 {
+    color: var(--line-5);
+}
+.color_line6 {
+    color: var(--line-6);
+}
+.color_line7 {
+    color: var(--line-7);
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.border {
+    border: 1px solid var(--line-3);
+}
+
+.rounded {
+    border-radius: 12px !important;
+}
+.rounded_light {
+    border-radius: 8px !important;
+}
+
+.shadow {
+    box-shadow: var(--shadow) !important;
+    transition: box-shadow 0.15s ease-in-out;
+}
+
+.shadow_strong {
+    box-shadow: var(--shadow-strong) !important;
+    transition: box-shadow 0.15s ease-in-out;
+}
+
+.hover_pointer:hover {
+    cursor: pointer;
+}
+
+.flex_center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-align_left {
+    text-align: left;
+}
+.text-align_center {
+    text-align: center;
+}
+.text-align_right {
+    text-align: right;
+}

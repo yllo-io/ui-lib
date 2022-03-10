@@ -1,0 +1,91 @@
+.input {
+    position: relative;
+    &.stretched {
+        width: -webkit-fill-available;
+    }
+    &.centered input {
+        text-align: center;
+    }
+    &.centered input::placeholder {
+        text-align: center;
+    }
+    input {
+        width: -webkit-fill-available;
+        padding: 7px 10px;
+        border-radius: 4px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: var(--line-4);
+        font-size: 13px;
+        line-height: 16px;
+        color: var(--line-7);
+    }
+    &.incorrect > input:not(:disabled) {
+        border-color: var(--contrast-2);
+    }
+    &:not(.incorrect) > input:not(:disabled):hover {
+        border-color: var(--line-5);
+    }
+    input::placeholder {
+        color: var(--line-4);
+    }
+    input:disabled {
+        color: var(--line-5);
+    }
+    .input__label {
+        position: absolute;
+        bottom: 100%;
+        left: 11px;
+        font-size: 12px;
+        line-height: 14px;
+        color: var(--line-5);
+    }
+    .input__incorrect-label {
+        position: absolute;
+        top: 100%;
+        left: 11px;
+        font-size: 12px;
+        line-height: 14px;
+        color: var(--contrast-2);
+    }
+    &.disabled > .input__incorrect-label {
+        color: var(--line-4);
+    }
+    .right {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        .right__label {
+            margin: 0 4px;
+            font-size: 13px;
+            line-height: 16px;
+            color: var(--line-5);
+            font-family: var(--font-Medium);
+        }
+        .right__eye {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin: 0 4px;
+        }
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type='number'] {
+        -moz-appearance: textfield;
+    }
+
+    &.interactive-element-hover input {
+        border-color: transparent !important;
+    }
+    &.interactive-element .interactive-cursor-hover {
+        z-index: -1;
+    }
+}

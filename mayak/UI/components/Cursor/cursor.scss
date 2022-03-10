@@ -1,0 +1,35 @@
+:root {
+    --cursor-default: var(--cursor-custom);
+    --cursor-default-webkit: var(--cursor-custom-webkit);
+}
+
+.cursor-grabbing,
+.cursor-grabbing * {
+    cursor: grabbing !important;
+    cursor: -moz-grabbing !important;
+    cursor: -webkit-grabbing !important;
+}
+.cursor-nwse-resize,
+.cursor-nwse-resize * {
+    cursor: nwse-resize !important;
+}
+
+.cursor-nesw-resize,
+.cursor-nesw-resize * {
+    cursor: nesw-resize !important;
+}
+
+.cursor-ns-resize,
+.cursor-ns-resize * {
+    cursor: ns-resize !important;
+}
+
+.cursor-ew-resize,
+.cursor-ew-resize * {
+    cursor: ew-resize !important;
+}
+.cursor-default,
+.cursor-default * {
+    cursor: var(--cursor-default);
+    cursor: var(--cursor-default-webkit);
+}

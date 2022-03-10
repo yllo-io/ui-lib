@@ -1,0 +1,12 @@
+.paper {
+    border-radius: 4px;
+    &.column {
+        flex-direction: column;
+    }
+    &.padding {
+        padding: 46px 46px;
+    }
+    &.background {
+        background: var(--line-1);
+    }
+}

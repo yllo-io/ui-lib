@@ -1,0 +1,33 @@
+.checkbox {
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--contrast-4);
+    background: var(--contrast-4);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.disabled {
+        border-color: var(--line-3);
+        background: var(--line-3);
+    }
+    &.checked > svg {
+        stroke: var(--line-1);
+    }
+    &.outlined {
+        border-color: var(--contrast-6);
+        background: none;
+    }
+    &.disabled.outlined {
+        border-color: var(--line-4);
+    }
+    &.checked.outlined > svg {
+        stroke: var(--contrast-6);
+    }
+    &.disabled.checked.outlined > svg {
+        stroke: var(--line-4);
+    }
+}
