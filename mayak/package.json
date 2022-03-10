@@ -1,5 +1,5 @@
 {
-  "name": "@mayak/ui-lib",
+  "name": "@mayak-js/ui-lib",
   "version": "1.0.23",
   "description": "ui-lib",
   "main": "index.ts",

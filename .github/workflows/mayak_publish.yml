@@ -1,4 +1,4 @@
-name: NPM publish
+name: Mayak UI-lib NPM publish
 
 on:
   workflow_dispatch:
@@ -13,9 +13,9 @@ jobs:
           node-version: "12.x"
           registry-url: "https://registry.npmjs.org"
       - run: npm ci
-        working-directory: package
+        working-directory: mayak
       - name: NPM Upload
-        working-directory: package
+        working-directory: mayak
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_KEY }}

@@ -1,4 +1,4 @@
-# Yllo UI-lib
+# Mayak UI-lib
 [yllo](https://yllo.co)
 
 ## Svelte UI Lib
