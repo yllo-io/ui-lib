@@ -18,14 +18,14 @@
         stroke: var(--line-1);
     }
     &.outlined {
-        border-color: var(--contrast-6);
+        border-color: var(--contrast-2);
         background: none;
     }
     &.disabled.outlined {
         border-color: var(--line-4);
     }
     &.checked.outlined > svg {
-        stroke: var(--contrast-6);
+        stroke: var(--contrast-2);
     }
     &.disabled.checked.outlined > svg {
         stroke: var(--line-4);
