@@ -1,6 +1,6 @@
 {
   "name": "@yllo/ui-lib",
-  "version": "1.0.23",
+  "version": "1.0.25",
   "description": "ui-lib",
   "main": "index.ts",
   "types": "index.d.ts",

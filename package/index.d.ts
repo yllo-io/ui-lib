@@ -22,5 +22,5 @@ export declare const Tabs: typeof SvelteComponent
 export declare function setCursor(newCursor: string): void
 export declare function interactiveElement(
     node: HTMLElement,
-    { isActive, onClick, isCursorHover = true }: { isActive: boolean; onClick?: () => void; isCursorHover: boolean }
+    { isActive, onClick = undefined, isCursorHover = true }: { isActive: boolean; onClick?: (event: MouseEvent) => void; isCursorHover?: boolean }
 )

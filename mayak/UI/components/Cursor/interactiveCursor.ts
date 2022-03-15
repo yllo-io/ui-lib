@@ -1,6 +1,6 @@
 export function interactiveElement(
     node: HTMLElement,
-    { isActive, onClick, isCursorHover = true }: { isActive: boolean; onClick?: () => void; isCursorHover?: boolean }
+    { isActive, onClick = undefined, isCursorHover = true }: { isActive: boolean; onClick?: (event: MouseEvent) => void; isCursorHover?: boolean }
 ) {
     function onMousemove(event: MouseEvent) {
         if (nodeRect) {
@@ -78,7 +78,7 @@ export function interactiveElement(
     if (isActiveState) activation()
 
     return {
-        update({ isActive, onClick, isCursorHover = true }: { isActive: boolean; onClick?: () => void; isCursorHover?: boolean }) {
+        update({ isActive, onClick = undefined, isCursorHover = true }: { isActive: boolean; onClick?: (event: MouseEvent) => void; isCursorHover?: boolean }) {
             if (!isActiveState && isActive) activation()
             else if (isActiveState && !isActive) deactivation()
         },
