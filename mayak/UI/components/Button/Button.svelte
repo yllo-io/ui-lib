@@ -12,6 +12,7 @@
     import { createEventDispatcher } from 'svelte'
     import { _theme } from '../../theme'
     import { interactiveElement } from '../Cursor/interactiveCursor'
+    import { EColor } from '../../types'
 
     export let variant: EButtonVariant = EButtonVariant.outlined
     export let isRounded: boolean
@@ -23,6 +24,8 @@
     export let minWidth: string | false = false
     export let classes: string = ''
     export let isClickAnimation: boolean = true
+    export let backgroundColor: EColor = EColor.contrast3
+    export let color: EColor = EColor.line1
 
     const dispatch = createEventDispatcher()
 
@@ -46,7 +49,9 @@
         }
     }}
     use:interactiveElement={{ isActive: $_theme.isInteractiveCursor && isActive }}
-    class="button button_variant_{variant} noselect {classes}"
+    class="button button_variant_{variant} {variant === EButtonVariant.filled
+        ? 'background-color_' + backgroundColor + ' color_' + color
+        : ''} noselect {classes}"
     style={minWidth ? 'min-width: ' + minWidth : ''}
     class:stretched={isStretched}
     class:button_rounded={isRounded === undefined ? $_theme.isRounded : isRounded}
