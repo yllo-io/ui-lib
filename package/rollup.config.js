@@ -17,7 +17,12 @@ export default {
         svelte({
             preprocess: sveltePreprocess(),
         }),
-        scss(),
+        scss({
+            output: './dist/bundle.css',
+            failOnError: true,
+            runtime: require('sass'),
+            outputStyle: 'compressed',
+        }),
         resolve({ browser: true }),
         commonjs(),
         typescript(),

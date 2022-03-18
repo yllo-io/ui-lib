@@ -1,3 +1,5 @@
+import './UI/lib.scss'
+import './UI/theme.scss'
 import { actions } from './UI/main'
 export { EThemeType } from './UI/types'
 export type { ThemeOptions } from './UI/types'
