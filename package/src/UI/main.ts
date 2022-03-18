@@ -1,5 +1,6 @@
 import { get } from 'svelte/store'
-import { ThemeOptions, EThemeType } from './types'
+import type { ThemeOptions } from './types'
+import { EThemeType } from './types'
 import { _theme } from './theme'
 import { setDefaultCursor } from './components/Cursor/cursor'
 
