@@ -1,4 +1,4 @@
-@import './components/Button/button'; 
+@import './components/Button/button';    
 @import './components/Paper/paper';
 @import './components/Switcher/switcher';
 @import './components/Loader/loader';
@@ -10,6 +10,8 @@
 @import './components/Tabs/tabs';
 @import './components/Cursor/interactiveCursor';
 @import './components/Cursor/cursor';
+@import './components/Select/select';
+@import './components/Scrollbar/scrollbar';
 
 .color_contrast1 {
     color: var(--contrast-1);
@@ -49,7 +51,7 @@
     color: var(--line-7);
 }
 
-.noselect {
+.noselect, .noselect * {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

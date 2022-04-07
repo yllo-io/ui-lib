@@ -1,0 +1,37 @@
+.scrollbar {
+    width: 8px;
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    top: 0;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &.visible {
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
+    .thumb {
+        border-radius: 3px;
+        top: 0;
+        width: 6px;
+        background: var(--line-2);
+        right: 1px;
+
+        transition: height 0.3s ease-in-out;
+
+        max-height: 100%;
+        position: absolute;
+
+        &.smooth {
+            transition: all 0.1s ease-in-out;
+        }
+        &:hover {
+            background: var(--line-3);
+        }
+        &.holding {
+            background: var(--line-4);
+        }
+    }
+}

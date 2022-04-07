@@ -9,16 +9,21 @@
     import { Input } from '@yllo/ui-lib'
     import { Avatar, EAvatarShape } from '@yllo/ui-lib'
     import { Tooltip, ETooltipPosition } from '@yllo/ui-lib'
+    import { Select, SelectValueT } from '@yllo/ui-lib'
     import ui, { EThemeType } from '@yllo/ui-lib'
+    import CusomSelectOption from './CusomSelectOption.svelte'
+    import CustomSelectLabel from './CustomSelectLabel.svelte'
 
     import ChangeThemeButton from '../ChangeThemeButton/ChangeThemeButton.svelte'
 
     let themeType: EThemeType = EThemeType.dark
     ui.setThemeOptions({
         themeType: themeType,
-        rounded: false,
-        shadow: false,
-        border: true,
+        isRounded: true,
+        isShadow: false,
+        isBorder: true,
+        isInteractiveCursor: true,
+        isCircleCursor: true,
     })
 
     let switcherState: boolean = false
@@ -27,11 +32,52 @@
     $: console.log('reisActive checkboxState', checkboxState)
     let inputValue: string = ''
     $: console.log('reisActive inputValue', inputValue)
+
+    const list = [
+        { value: 'BTC&nbsp;<span>Bitcoin</span>', props: { something: 'Hello world!' } },
+        { value: 'ETH' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+    ]
+    const list2 = [
+        { value: 'BTC', props: { name: 'Bitcoin' } },
+        { value: 'ETH' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+        { value: 'XLT' },
+    ]
 </script>
 
 <ChangeThemeButton bind:themeType style="position: absolute; top: 20px; right: 20px;" />
 <div class="wrapper">
     <!-- <Test /> -->
+    <div class="my-select-wrapper paper padding">
+        <Select {list} minWidth="100px" on:change={({ detail }) => console.log(detail)} />
+    </div>
+    <Paper isPadding isCenter>
+        <Select list={list2} OptionComponent={CusomSelectOption} minWidth="100px" on:change={({ detail }) => console.log(detail)} />
+    </Paper>
+    <Paper isPadding isCenter>
+        <Select
+            list={list2}
+            OptionComponent={CusomSelectOption}
+            LabelComponent={CustomSelectLabel}
+            minWidth="100px"
+            isMultiSelect
+            on:change={({ detail }) => console.log(detail)}
+        />
+    </Paper>
     <Paper isPadding isCenter>
         <div class="h1 font_math">Hello world!</div>
     </Paper>
@@ -97,5 +143,11 @@
     }
     .wrapper > :global(*) {
         margin: 30px 0;
+    }
+    .my-select-wrapper :global(.item:not(.selected) > .item__name > span) {
+        color: var(--line-4);
+    }
+    .my-select-wrapper :global(.label__value > span) {
+        display: none;
     }
 </style>

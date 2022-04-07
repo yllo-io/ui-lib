@@ -1,0 +1,60 @@
+.select {
+    position: relative;
+    .label {
+        height: 32px;
+        border: 1px solid var(--line-4);
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding-left: 20px;
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .label__value {
+            margin-right: 20px;
+        }
+    }
+    .list {
+        position: absolute;
+        top: 32px;
+        left: 0;
+        z-index: 1;
+    }
+    .list__wrapper {
+        position: relative;
+        max-height: 280px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    .list__container {
+        position: relative;
+        background: var(--line-1);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        border-radius: 4px;
+        overflow: hidden;
+        .item {
+            &:hover {
+                background: var(--line-2);
+            }
+            & > div {
+                display: flex;
+                justify-content: center;
+                min-width: 208px;
+                padding: 12px 0;
+            }
+            &.selected {
+                .item__name {
+                    color: #e7e7e7;
+                }
+                background: #2168ef;
+            }
+        }
+    }
+}

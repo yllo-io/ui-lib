@@ -23,6 +23,7 @@
     export let minWidth: string | false = false
     export let classes: string = ''
     export let isClickAnimation: boolean = true
+    export let isAnimationDelay: boolean = true
 
     const dispatch = createEventDispatcher()
 
@@ -35,10 +36,11 @@
         if (isActive) {
             if (isClickAnimation) {
                 clickAnimation = true
+                if (!isAnimationDelay) dispatch('click', event)
                 clearTimeout(animationTimeout)
                 animationTimeout = setTimeout(() => {
                     clickAnimation = false
-                    dispatch('click', event)
+                    if (isAnimationDelay) dispatch('click', event)
                 }, 200)
             } else {
                 dispatch('click', event)

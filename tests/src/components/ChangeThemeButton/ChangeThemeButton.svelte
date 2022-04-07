@@ -7,7 +7,14 @@
 <div
     on:click={() => {
         themeType = themeType === EThemeType.light ? EThemeType.dark : EThemeType.light
-        ui.setTheme(themeType)
+        ui.setThemeOptions({
+            themeType: themeType,
+            isRounded: true,
+            isShadow: false,
+            isBorder: true,
+            isInteractiveCursor: true,
+            isCircleCursor: true,
+        })
     }}
     class="change-theme-button"
     {style}

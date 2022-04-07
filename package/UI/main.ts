@@ -1,10 +1,10 @@
 import { get } from 'svelte/store'
-import type { ThemeOptions } from './types'
-import { EThemeType } from './types'
+import { ThemeOptions, EThemeType } from './types'
 import { _theme } from './theme'
 import { setDefaultCursor } from './components/Cursor/cursor'
 
 export const setThemeOptions = (newThemeOptions: ThemeOptions): void => {
+    console.log('setThemeOptions', newThemeOptions)
     const theme = get(_theme)
     if (theme.themeType !== newThemeOptions.themeType) {
         if (newThemeOptions.themeType === EThemeType.light) setRootVariables(themeVariablesLight)

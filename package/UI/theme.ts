@@ -1,6 +1,5 @@
 import { writable } from 'svelte/store'
-import { EThemeType } from './types'
-import type { ThemeOptions } from './types'
+import { ThemeOptions, EThemeType } from './types'
 
 function createStore() {
     const { subscribe, update, set } = writable(<ThemeOptions>{
