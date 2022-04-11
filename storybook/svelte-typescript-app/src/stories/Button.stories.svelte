@@ -1,6 +1,7 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Button } from "@yllo/ui-lib";
+  import { Button, EButtonVariant } from "@yllo/ui-lib";
+  import Config from "../Config.svelte";
 </script>
 
 <!-- More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export -->
@@ -9,24 +10,47 @@
   title="Example/Button"
   component={Button}
   argTypes={{
-    // backgroundColor: { control: "color" },
-    // label: { control: "text" },
-    // onClick: { action: "onClick" },
-    // primary: { control: "boolean" },
-    // size: {
-    //   control: { type: "select" },
-    //   options: ["small", "medium", "large"],
-    // },
+    // Props example
+    isRounded: {
+      type: { name: "boolean" },
+      defaultValue: true,
+      control: {
+        type: "boolean",
+      },
+    },
+    variant: {
+      // type: { name: EButtonVariant, required: true },
+      options: Object.values(EButtonVariant).filter(
+        (x) => typeof x === "number"
+      ),
+      // mapping: EButtonVariant,
+      defaultValue: EButtonVariant.filled,
+      control: {
+        type: "select",
+        labels: Object.values(EButtonVariant).filter(
+          (x) => typeof x === "string"
+        ),
+      },
+    },
   }}
 />
 
 <!-- More on component templates: https://storybook.js.org/docs/svelte/writing-stories/introduction#using-args -->
 <Template let:args>
-  <Button>123</Button>
+  <Button {...args} on:click={args.onClick}>Button</Button>
+  <!-- TODO: transfer config to global decorator -->
+  <Config />
 </Template>
 
 <!-- More on args: https://storybook.js.org/docs/svelte/writing-stories/args -->
-<Story name="Primary" />
+
+<Story
+  name="Filled"
+  args={{
+    variant: EButtonVariant.filled,
+  }}
+/>
+
 <!-- 
 
 <Story
