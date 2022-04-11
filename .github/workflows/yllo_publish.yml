@@ -16,6 +16,8 @@ jobs:
         working-directory: package
       - run: npm run prebuild
         working-directory: package
+      - run: npm run copyfiles
+        working-directory: package
       - name: NPM Upload
         working-directory: package
         run: npm publish --access public

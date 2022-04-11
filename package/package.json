@@ -1,9 +1,9 @@
 {
   "name": "@yllo/ui-lib",
-  "version": "1.0.30",
+  "version": "1.0.32",
   "description": "ui-lib",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "devDependencies": {
     "sass": "^1.45.1",
     "sass-loader": "^12.4.0",
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/yllo-io/ui-lib/blob/main/package/README.md",
   "dependencies": {
     "@imask/svelte": "^6.2.2",
+    "copyfiles": "^2.4.1",
     "css-loader": "^6.5.1",
     "lodash": "^4.17.21",
     "style-loader": "^3.3.1",
@@ -35,6 +36,7 @@
     "svelte-preprocess-sass": "^2.0.1"
   },
   "scripts": {
-    "prebuild": "tsc"
+    "prebuild": "tsc",
+    "copyfiles": "copyfiles -u 1 UI/**/*.svelte UI/**/*.scss dist/UI"
   }
 }
