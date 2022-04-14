@@ -10,7 +10,7 @@
     import { Avatar, EAvatarShape } from '@yllo/ui-lib'
     import { Tooltip, ETooltipPosition } from '@yllo/ui-lib'
     import { Select, SelectValueT } from '@yllo/ui-lib'
-    import ui, { EThemeType } from '@yllo/ui-lib'
+    import ui, { EThemeType, EColor } from '@yllo/ui-lib'
     import CusomSelectOption from './CusomSelectOption.svelte'
     import CustomSelectLabel from './CustomSelectLabel.svelte'
 
@@ -88,6 +88,7 @@
         <Button isRounded={true} isActive={true} variant={EButtonVariant.filled} isMarginHorizontal>I am Button</Button>
         <Button isRounded={false} isActive={true} variant={EButtonVariant.text} isMarginHorizontal>I am Button</Button>
         <Button isRounded={false} isActive={true} variant={EButtonVariant.text2} isMarginHorizontal>I am Button</Button>
+        <Button isRounded={false} isActive={true} variant={EButtonVariant.filled} backgroundColor={EColor.contrast6} color={EColor.line1} isMarginHorizontal>I am Button</Button>
     </Paper>
     <Paper isCenter isPadding isRounded={true} isShadow={false}>
         <Button isRounded={false} isActive={false} isStretched>I am Button</Button>

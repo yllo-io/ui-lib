@@ -1,4 +1,4 @@
-@import './components/Button/button';    
+@import './components/Button/button';
 @import './components/Paper/paper';
 @import './components/Switcher/switcher';
 @import './components/Loader/loader';
@@ -51,7 +51,46 @@
     color: var(--line-7);
 }
 
-.noselect, .noselect * {
+.background-color_contrast1 {
+    background-color: var(--contrast-1);
+}
+.background-color_contrast2 {
+    background-color: var(--contrast-2);
+}
+.background-color_contrast3 {
+    background-color: var(--contrast-3);
+}
+.background-color_contrast4 {
+    background-color: var(--contrast-4);
+}
+.background-color_contrast6 {
+    background-color: var(--contrast-6);
+}
+
+.background-color_line1 {
+    background-color: var(--line-1);
+}
+.background-color_line2 {
+    background-color: var(--line-2);
+}
+.background-color_line3 {
+    background-color: var(--line-3);
+}
+.background-color_line4 {
+    background-color: var(--line-4);
+}
+.background-color_line5 {
+    background-color: var(--line-5);
+}
+.background-color_line6 {
+    background-color: var(--line-6);
+}
+.background-color_line7 {
+    background-color: var(--line-7);
+}
+
+.noselect,
+.noselect * {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

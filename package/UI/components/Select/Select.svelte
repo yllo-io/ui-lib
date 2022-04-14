@@ -5,6 +5,7 @@
   import Scrollbar from "../Scrollbar/Scrollbar.svelte";
   import type { SvelteComponent } from "svelte";
   import { SelectValueT } from "./select";
+  import { _client } from '../../tools/client'
 
   export let list: SelectValueT[] = [];
   export let isActive: boolean = true;
@@ -62,7 +63,7 @@
       style={minWidth ? "min-width: " + minWidth : ""}
       on:click={() => (isOpen = !isOpen)}
       use:interactiveElement={{
-        isActive: $_theme.isInteractiveCursor && isActive,
+        isActive: !$_client.isMobile && $_theme.isInteractiveCursor && isActive,
       }}
     >
       <div class="label__value color_line6 noselect">
@@ -117,7 +118,7 @@
                 <div
                   class="item__name body1 color_line6 noselect"
                   use:interactiveElement={{
-                    isActive: $_theme.isInteractiveCursor && isActive,
+                    isActive: !$_client.isMobile && $_theme.isInteractiveCursor && isActive,
                     isCursorHover: false,
                   }}
                 >

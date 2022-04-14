@@ -2,6 +2,7 @@
     import { _theme } from '../../theme'
     import { imask } from '@imask/svelte'
     import { interactiveElement } from '../Cursor/interactiveCursor'
+    import { _client } from '../../tools/client'
 
     export let value: string = ''
     export let label: string | false = false
@@ -34,7 +35,7 @@
     class:disabled={!isActive}
     class:stretched={isStretched}
     class:centered={isCentered}
-    use:interactiveElement={{ isActive: $_theme.isInteractiveCursor && isActive }}
+    use:interactiveElement={{ isActive: !$_client.isMobile && $_theme.isInteractiveCursor && isActive }}
 >
     {#if label}
         <span class="input__label">{label}</span>

@@ -2,6 +2,7 @@
     import { createEventDispatcher } from 'svelte'
     import { interactiveElement } from '../Cursor/interactiveCursor'
     import { _theme } from '../../theme'
+    import { _client } from '../../tools/client'
 
     export let state: boolean
     export let isActive: boolean = true
@@ -10,7 +11,7 @@
     const dispatch = createEventDispatcher()
 
     let stateSwitch: number = 0
-    let interval: NodeJS.Timer
+    let interval: ReturnType<typeof setTimeout>
     if (state) stateSwitch = 4
     $: state, ChangeState()
 
@@ -45,7 +46,7 @@
 <div
     class="switcher noselect"
     class:disabled={!isActive}
-    use:interactiveElement={{ isActive: $_theme.isInteractiveCursor && isActive }}
+    use:interactiveElement={{ isActive: !$_client.isMobile && $_theme.isInteractiveCursor && isActive }}
     on:click={() => {
         if (isActive) {
             if (isBinding) state = !state
