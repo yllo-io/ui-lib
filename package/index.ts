@@ -15,6 +15,8 @@ export { default as Tabs } from './UI/components/Tabs/Tabs.svelte'
 export { default as Select } from './UI/components/Select/Select.svelte'
 export { SelectValueT as SelectValueT } from './UI/components/Select/select'
 export { default as Scrollbar } from './UI/components/Scrollbar/Scrollbar.svelte'
+export { default as Stepper } from './UI/components/Stepper/Stepper.svelte'
+export { StepperStepT as StepperStepT } from './UI/components/Stepper/stepper'
 export { setCursor } from './UI/components/Cursor/cursor'
 export { interactiveElement } from './UI/components/Cursor/interactiveCursor'
 export default actions

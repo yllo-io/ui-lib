@@ -13,7 +13,7 @@
     import ui, { EThemeType, EColor } from '@yllo/ui-lib'
     import CusomSelectOption from './CusomSelectOption.svelte'
     import CustomSelectLabel from './CustomSelectLabel.svelte'
-
+    import { Stepper, StepperStepT } from '@yllo/ui-lib'
     import ChangeThemeButton from '../ChangeThemeButton/ChangeThemeButton.svelte'
 
     let themeType: EThemeType = EThemeType.dark
@@ -57,11 +57,42 @@
         { value: 'XLT' },
         { value: 'XLT' },
     ]
+
+    let stepIndex,
+        steps = [{ name: 'Connect Metamask', isDone: true, isClickable: true }, { name: 'Token Details' }, { name: 'Media Details' }]
 </script>
 
 <ChangeThemeButton bind:themeType style="position: absolute; top: 20px; right: 20px;" />
 <div class="wrapper">
-    <!-- <Test /> -->
+    <Stepper bind:stepIndex {steps} onStepClick={(index) => console.log('click index', index)}>
+        {#if stepIndex === 0}
+            <p>Step 1</p>
+            <p>Bla</p>
+            <p>Bla</p>
+            <p>Bla</p>
+            <p class="flex_row">
+                <Button on:click={() => (stepIndex += 1)} isAnimationDelay={false}>Next</Button>
+            </p>
+        {:else if stepIndex === 1}
+            Step2
+            <p>Bla</p>
+            <p>Bla</p>
+            <p>Bla</p>
+            <p>Bla</p>
+            <p class="flex_row">
+                <Button on:click={() => (stepIndex -= 1)} isAnimationDelay={false}>Previous</Button>
+                <Button on:click={() => (stepIndex += 1)} isAnimationDelay={false}>Next</Button>
+            </p>
+        {:else if stepIndex === 2}
+            <p>Step 3</p>
+            <p>Bla</p>
+            <p>Bla</p>
+            <p>Bla</p>
+            <p class="flex_row">
+                <Button on:click={() => (stepIndex -= 1)} isAnimationDelay={false}>Previous</Button>
+            </p>
+        {/if}
+    </Stepper>
     <div class="my-select-wrapper paper padding">
         <Select {list} minWidth="100px" on:change={({ detail }) => console.log(detail)} />
     </div>
@@ -88,7 +119,9 @@
         <Button isRounded={true} isActive={true} variant={EButtonVariant.filled} isMarginHorizontal>I am Button</Button>
         <Button isRounded={false} isActive={true} variant={EButtonVariant.text} isMarginHorizontal>I am Button</Button>
         <Button isRounded={false} isActive={true} variant={EButtonVariant.text2} isMarginHorizontal>I am Button</Button>
-        <Button isRounded={false} isActive={true} variant={EButtonVariant.filled} backgroundColor={EColor.contrast6} color={EColor.line1} isMarginHorizontal>I am Button</Button>
+        <Button isRounded={false} isActive={true} variant={EButtonVariant.filled} backgroundColor={EColor.contrast6} color={EColor.line1} isMarginHorizontal
+            >I am Button</Button
+        >
     </Paper>
     <Paper isCenter isPadding isRounded={true} isShadow={false}>
         <Button isRounded={false} isActive={false} isStretched>I am Button</Button>

@@ -12,6 +12,7 @@
 @import './components/Cursor/cursor';
 @import './components/Select/select';
 @import './components/Scrollbar/scrollbar';
+@import './components/Stepper/stepper';
 
 .color_contrast1 {
     color: var(--contrast-1);
@@ -128,6 +129,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.flex_row {
+    display: flex;
+    flex-direction: row;
 }
 
 .text-align_left {
