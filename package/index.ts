@@ -17,6 +17,7 @@ export { SelectValueT as SelectValueT } from './UI/components/Select/select'
 export { default as Scrollbar } from './UI/components/Scrollbar/Scrollbar.svelte'
 export { default as Stepper } from './UI/components/Stepper/Stepper.svelte'
 export { StepperStepT as StepperStepT } from './UI/components/Stepper/stepper'
+export { default as Textarea } from './UI/components/Textarea/Textarea.svelte'
 export { setCursor } from './UI/components/Cursor/cursor'
 export { interactiveElement } from './UI/components/Cursor/interactiveCursor'
 export default actions

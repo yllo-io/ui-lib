@@ -1,42 +1,43 @@
 {
-  "name": "@yllo/ui-lib",
-  "version": "1.0.34",
-  "description": "ui-lib",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "devDependencies": {
-    "sass": "^1.45.1",
-    "sass-loader": "^12.4.0",
-    "svelte": "^3.41.0",
-    "svelte-loader": "^3.1.2",
-    "svelte-preprocess": "^4.9.8",
-    "svelte-preprocess-sass": "^2.0.1",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.4.4",
-    "webpack": "^5.65.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yllo-io/ui-lib.git"
-  },
-  "author": "yllo",
-  "license": "ISC",
-  "readme": "README.md",
-  "bugs": {
-    "url": "https://github.com/yllo-io/ui-lib/issues"
-  },
-  "homepage": "https://github.com/yllo-io/ui-lib/blob/main/package/README.md",
-  "dependencies": {
-    "@imask/svelte": "^6.2.2",
-    "copyfiles": "^2.4.1",
-    "css-loader": "^6.5.1",
-    "lodash": "^4.17.21",
-    "style-loader": "^3.3.1",
-    "svelte-loader": "^3.1.2",
-    "svelte-preprocess-sass": "^2.0.1"
-  },
-  "scripts": {
-    "prebuild": "tsc",
-    "copyfiles": "copyfiles -u 1 UI/**/*.svelte UI/**/*.scss dist/UI"
-  }
+    "name": "@yllo/ui-lib",
+    "version": "1.0.35",
+    "description": "ui-lib",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "devDependencies": {
+        "sass": "^1.45.1",
+        "sass-loader": "^12.4.0",
+        "svelte": "^3.41.0",
+        "svelte-loader": "^3.1.2",
+        "svelte-preprocess": "^4.9.8",
+        "svelte-preprocess-sass": "^2.0.1",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.4.4",
+        "webpack": "^5.65.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yllo-io/ui-lib.git"
+    },
+    "author": "yllo",
+    "license": "ISC",
+    "readme": "README.md",
+    "bugs": {
+        "url": "https://github.com/yllo-io/ui-lib/issues"
+    },
+    "homepage": "https://github.com/yllo-io/ui-lib/blob/main/package/README.md",
+    "dependencies": {
+        "@imask/svelte": "^6.2.2",
+        "copyfiles": "^2.4.1",
+        "css-loader": "^6.5.1",
+        "lodash": "^4.17.21",
+        "style-loader": "^3.3.1",
+        "svelte-loader": "^3.1.2",
+        "svelte-preprocess-sass": "^2.0.1"
+    },
+    "scripts": {
+        "prebuild": "tsc",
+        "copyfiles": "copyfiles -u 1 UI/**/*.svelte UI/**/*.scss dist/UI",
+        "package": "tsc && copyfiles -u 1 UI/**/*.svelte UI/**/*.scss dist/UI"
+    }
 }

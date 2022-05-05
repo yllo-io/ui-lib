@@ -7,7 +7,7 @@
     import { EColor } from '../../types'
 
     export let variant: EButtonVariant = EButtonVariant.outlined
-    export let isRounded: boolean
+    export let isRounded: boolean | undefined = undefined
     export let isStretched: boolean = false
     export let isActive: boolean = true
     export let isMarginHorizontal: boolean = false

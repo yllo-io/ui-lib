@@ -1,9 +1,9 @@
 <script lang="ts">
     import { _theme } from '../../theme'
 
-    export let isBorder: boolean
-    export let isRounded: boolean
-    export let isShadow: boolean
+    export let isBorder: boolean | undefined = undefined
+    export let isRounded: boolean | undefined = undefined
+    export let isShadow: boolean | undefined = undefined
     export let isShadowStrong: boolean = false
     export let isColumn: boolean = false
     export let isPadding: boolean = false

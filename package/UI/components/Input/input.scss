@@ -33,9 +33,10 @@
         color: var(--line-5);
     }
     .input__label {
-        position: absolute;
-        bottom: 100%;
-        left: 11px;
+        // position: absolute;
+        // bottom: 100%;
+        // left: 11px;
+        padding-left: 11px;
         font-size: 12px;
         line-height: 14px;
         color: var(--line-5);

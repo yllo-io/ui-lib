@@ -4,13 +4,13 @@
     import { interactiveElement } from '../Cursor/interactiveCursor'
     import { _client } from '../../tools/client'
 
-    export let value: string = ''
+    export let value: string | number = ''
     export let label: string | false = false
     export let placeholder: string = ''
     export let isActive: boolean = true
     export let incorrect: string | false = false
     export let isStretched: boolean = false
-    export let isRounded: boolean
+    export let isRounded: boolean | undefined = undefined
     export let rightLabel: string | false = false
     export let isPassword: boolean = false
     export let isNumber: boolean = false
@@ -38,7 +38,7 @@
     use:interactiveElement={{ isActive: !$_client.isMobile && $_theme.isInteractiveCursor && isActive }}
 >
     {#if label}
-        <span class="input__label">{label}</span>
+        <div class="input__label">{@html label}</div>
     {/if}
     {#if isPassword}
         {#if passwordHidden}

@@ -37,7 +37,7 @@
             {/if}
         </div>
         {#if stepIndex === index}
-            <div class="step-content" transition:slide={{ duration: 300 }}>
+            <div class="step-content" transition:slide|local={{ duration: 300 }}>
                 <slot />
             </div>
         {/if}
