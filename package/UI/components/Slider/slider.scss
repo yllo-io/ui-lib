@@ -1,0 +1,37 @@
+.slider {
+    width: 100%;
+    padding: 0 20px;
+    .track {
+        height: 11px;
+        padding: 5px 0;
+        position: relative;
+        .line {
+            position: absolute;
+            width: calc(100% + 40px);
+            height: 1px;
+            background: var(--line-5);
+            left: -20px;
+        }
+    }
+    .thumb {
+        position: absolute;
+        background: var(--line-7);
+        width: 11px;
+        height: 11px;
+        border-radius: 6px;
+        top: 0;
+        & > .interactive-cursor-hover {
+            --scale: 1.2;
+            --scale-hover: 1.8;
+        }
+    }
+    .legend {
+        position: relative;
+        margin-top: 10px;
+        height: 16px;
+        span {
+            position: absolute;
+            transform: translate(-50%, 0);
+        }
+    }
+}

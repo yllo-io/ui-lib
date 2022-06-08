@@ -1,6 +1,12 @@
 export function interactiveElement(
     node: HTMLElement,
-    { isActive, onClick = undefined, isCursorHover = true }: { isActive: boolean; onClick?: (event: MouseEvent) => void; isCursorHover?: boolean }
+    {
+        isActive,
+        onClick = undefined,
+        isCursorHover = true,
+        translateFactorX = 1,
+        translateFactorY = 1,
+    }: { isActive: boolean; onClick?: (event: MouseEvent) => void; isCursorHover?: boolean; translateFactorX?: number; translateFactorY?: number }
 ) {
     function onMousemove(event: MouseEvent) {
         if (nodeRect) {
@@ -10,12 +16,12 @@ export function interactiveElement(
             const leftOffset: number = (event.x - nodeRect.left - halfWidth) / halfWidth
 
             if (isCursorHover) {
-                hover.style.setProperty('--translateX', `${Math.round(-leftOffset * 3)}px`)
-                hover.style.setProperty('--translateY', `${Math.round(-topOffset)}px`)
+                hover.style.setProperty('--translateX', `${Math.round(-leftOffset * 3 * translateFactorX)}px`)
+                hover.style.setProperty('--translateY', `${Math.round(-topOffset * translateFactorY)}px`)
             }
 
-            node.style.setProperty('--translateX', `${Math.round(leftOffset * 6)}px`)
-            node.style.setProperty('--translateY', `${Math.round(topOffset * 4)}px`)
+            node.style.setProperty('--translateX', `${Math.round(leftOffset * 6 * translateFactorX)}px`)
+            node.style.setProperty('--translateY', `${Math.round(topOffset * 4 * translateFactorY)}px`)
         }
     }
 
@@ -78,7 +84,19 @@ export function interactiveElement(
     if (isActiveState) activation()
 
     return {
-        update({ isActive, onClick = undefined, isCursorHover = true }: { isActive: boolean; onClick?: (event: MouseEvent) => void; isCursorHover?: boolean }) {
+        update({
+            isActive,
+            onClick = undefined,
+            isCursorHover = true,
+            translateFactorX = 1,
+            translateFactorY = 1,
+        }: {
+            isActive: boolean
+            onClick?: (event: MouseEvent) => void
+            isCursorHover?: boolean
+            translateFactorX?: number
+            translateFactorY?: number
+        }) {
             if (!isActiveState && isActive) activation()
             else if (isActiveState && !isActive) deactivation()
         },

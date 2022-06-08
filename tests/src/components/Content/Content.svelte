@@ -15,6 +15,7 @@
     import CustomSelectLabel from './CustomSelectLabel.svelte'
     import { Stepper, StepperStepT } from '@yllo/ui-lib'
     import ChangeThemeButton from '../ChangeThemeButton/ChangeThemeButton.svelte'
+    import { Slider } from '@yllo/ui-lib'
 
     let themeType: EThemeType = EThemeType.dark
     ui.setThemeOptions({
@@ -60,10 +61,17 @@
 
     let stepIndex,
         steps = [{ name: 'Connect Metamask', isDone: true, isClickable: true }, { name: 'Token Details' }, { name: 'Media Details' }]
+
+    let sliderValue = 7
 </script>
 
 <ChangeThemeButton bind:themeType style="position: absolute; top: 20px; right: 20px;" />
 <div class="wrapper">
+    <Paper isPadding isCenter>
+        <div style="width: 250px;">
+            <Slider min={6} max={8} bind:value={sliderValue} />
+        </div>
+    </Paper>
     <Stepper bind:stepIndex {steps} onStepClick={(index) => console.log('click index', index)}>
         {#if stepIndex === 0}
             <p>Step 1</p>

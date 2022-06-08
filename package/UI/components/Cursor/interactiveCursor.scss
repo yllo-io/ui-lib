@@ -10,7 +10,7 @@
     border-radius: var(--border-radius, 4px);
     &.active {
         display: block;
-        transform: translate(var(--translateX, 0), var(--translateY, 0)) scale(var(--scale, 1), var(--scale, 1));
+        transform: translate(var(--translateX, 0), var(--translateY, 0)) scale(var(--scale-hover, var(--scale, 1)), var(--scale-hover, var(--scale, 1)));
     }
 }
 

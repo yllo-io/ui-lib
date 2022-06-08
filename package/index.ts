@@ -20,4 +20,5 @@ export { StepperStepT as StepperStepT } from './UI/components/Stepper/stepper'
 export { default as Textarea } from './UI/components/Textarea/Textarea.svelte'
 export { setCursor } from './UI/components/Cursor/cursor'
 export { interactiveElement } from './UI/components/Cursor/interactiveCursor'
+export { default as Slider } from './UI/components/Slider/Slider.svelte'
 export default actions
