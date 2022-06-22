@@ -1,5 +1,6 @@
 .switcher {
     height: 16px;
+    display: inline-block;
 }
 .switcher.disabled svg {
     fill: var(--line-3) !important;

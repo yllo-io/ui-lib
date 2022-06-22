@@ -1,5 +1,6 @@
 .tooltip-wrapper {
     position: relative;
+    display: inline-block;
     .tooltip {
         display: none;
         color: var(--line-7);

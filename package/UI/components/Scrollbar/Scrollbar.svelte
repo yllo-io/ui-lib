@@ -3,7 +3,8 @@
 
     export let wrapper
     export let container
-    export let scrollByTrackSpeed = 5 //pixels per millisecond
+    // pixels per millisecond
+    export let scrollByTrackSpeed = 5
     export let hideNotActive = true
     export let offsetRight = 0
     export let paddingBottom = 0
