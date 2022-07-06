@@ -43,9 +43,7 @@
         }
     }}
     use:interactiveElement={{ isActive: !$_client.isMobile && $_theme.isInteractiveCursor && isActive }}
-    class="button button_variant_{variant} {variant === EButtonVariant.filled
-        ? 'background-color_' + backgroundColor + ' color_' + color
-        : ''} noselect {classes}"
+    class="button button_variant_{variant} {variant === EButtonVariant.filled ? 'background-color_' + backgroundColor : ''} color_{color} noselect {classes}"
     style={minWidth ? 'min-width: ' + minWidth : ''}
     class:stretched={isStretched}
     class:button_rounded={isRounded === undefined ? $_theme.isRounded : isRounded}
