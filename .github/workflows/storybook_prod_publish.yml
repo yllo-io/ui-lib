@@ -1,9 +1,8 @@
-name: Storybook publish (dev .io)
+name: Storybook publish (prod yllo.co/ui)
 
 on:
-    push:
-        branches:
-            - main
+    workflow_dispatch:
+
 jobs:
     deploy:
         runs-on: ubuntu-latest
@@ -23,8 +22,8 @@ jobs:
             - name: Upload
               uses: SamKirkland/FTP-Deploy-Action@4.1.0
               with:
-                  server: yllo.io
-                  username: ftpylloio
-                  password: ${{ secrets.ALPHA_FTP_PASSWORD }}
+                  server: 195.201.243.53
+                  username: ftpylloco
+                  password: ${{ secrets.PROD_FTP_PASSWORD }}
                   local-dir: ./storybook/svelte-typescript-app/storybook-static/
                   server-dir: ./ui/
