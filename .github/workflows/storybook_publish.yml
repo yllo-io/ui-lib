@@ -25,5 +25,5 @@ jobs:
                   server: yllo.io
                   username: ftpylloio
                   password: ${{ secrets.ALPHA_FTP_PASSWORD }}
-                  local-dir: ./public/storybook/svelte-typescript-app/storybook-static/
+                  local-dir: ./storybook/svelte-typescript-app/storybook-static/
                   server-dir: ./ui/
