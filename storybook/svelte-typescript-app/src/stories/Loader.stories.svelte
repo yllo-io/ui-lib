@@ -1,14 +1,14 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
     import { Loader } from '@yllo/ui-lib'
-    import Config from '../Config.svelte'
 </script>
 
-<Meta title="Example/LoaderComponent" component={Loader} argTypes={{}} />
+<Meta title="Loader" component={Loader} argTypes={{}} />
 
 <Template let:args>
     <Loader {...args} />
-    <Config />
 </Template>
 
-<Story name="LoaderComponent" />
+<Story name="Default" args={{ isContrast: false }} />
+
+<Story name="Contrast" args={{ isContrast: true }} />

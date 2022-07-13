@@ -1,11 +1,10 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
     import { Input } from '@yllo/ui-lib'
-    import Config from '../Config.svelte'
 </script>
 
 <Meta
-    title="Example/Input"
+    title="Input"
     component={Input}
     argTypes={{
         label: {
@@ -55,8 +54,29 @@
 />
 
 <Template let:args>
-    <Input {...args} />
-    <Config />
+    <div class="wrapper">
+        <Input {...args} />
+    </div>
 </Template>
 
-<Story name="Input" />
+<Story name="Default" />
+
+<Story name="Label" args={{ label: 'Label text' }} />
+
+<Story name="Placeholder" args={{ placeholder: 'Placeholder text' }} />
+
+<Story name="Incorrect" args={{ incorrect: 'Error text' }} />
+
+<Story name="Right Label" args={{ rightLabel: 'Text' }} />
+
+<Story name="Password" args={{ isPassword: true }} />
+
+<Story name="Number" args={{ isNumber: true }} />
+
+<Story name="Centered" args={{ isCentered: true }} />
+
+<style>
+    .wrapper {
+        width: 300px;
+    }
+</style>

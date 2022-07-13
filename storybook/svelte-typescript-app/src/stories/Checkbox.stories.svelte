@@ -1,16 +1,14 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
     import { Checkbox } from '@yllo/ui-lib'
-    import Config from '../Config.svelte'
 
     let state = true
 </script>
 
 <Meta
-    title="Example/Checkbox"
+    title="Checkbox"
     component={Checkbox}
     argTypes={{
-        // Props example
         state: {
             type: { name: 'boolean' },
             control: {
@@ -39,7 +37,8 @@
 
 <Template let:args>
     <Checkbox {...args} bind:state>Checkbox</Checkbox>
-    <Config />
 </Template>
 
-<Story name="Checkbox" />
+<Story name="Default" args={{}} />
+
+<Story name="Outlined" args={{ isOutlined: true }} />

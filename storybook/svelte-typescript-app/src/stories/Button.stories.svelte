@@ -1,13 +1,10 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
     import { Button, EButtonVariant, EColor } from '@yllo/ui-lib'
-    import Config from '../Config.svelte'
 </script>
 
-<!-- More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export -->
-<!-- More on argTypes: https://storybook.js.org/docs/svelte/api/argtypes -->
 <Meta
-    title="Example/Button"
+    title="Button"
     component={Button}
     argTypes={{
         // Props example
@@ -62,44 +59,16 @@
     }}
 />
 
-<!-- More on component templates: https://storybook.js.org/docs/svelte/writing-stories/introduction#using-args -->
 <Template let:args>
     <Button {...args} on:click={args.onClick}>Button</Button>
-    <!-- TODO: transfer config to global decorator -->
-    <Config />
 </Template>
 
-<!-- More on args: https://storybook.js.org/docs/svelte/writing-stories/args -->
+<Story name="Outlined" args={{ variant: EButtonVariant.outlined, color: EColor.line7 }} />
 
-<!-- <Story
-  name="Filled"
-  args={{
-    variant: EButtonVariant.filled,
-  }}
-/> -->
+<Story name="Outlined 2" args={{ variant: EButtonVariant.outlined2, color: EColor.line7 }} />
 
-<Story name="Button" />
+<Story name="Filled" args={{ variant: EButtonVariant.filled, color: EColor.line1 }} />
 
-<!-- 
+<Story name="Text" args={{ variant: EButtonVariant.text, color: EColor.line4 }} />
 
-<Story
-  name="Secondary"
-  args={{
-    label: "Button",
-  }}
-/>
-<Story
-  name="Large"
-  args={{
-    size: "large",
-    label: "Button",
-  }}
-/>
-
-<Story
-  name="Small"
-  args={{
-    size: "small",
-    label: "Button",
-  }}
-/> -->
+<Story name="Text 2" args={{ variant: EButtonVariant.text2, color: EColor.line5 }} />

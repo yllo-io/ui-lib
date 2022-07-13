@@ -1,13 +1,12 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
     import { Switcher } from '@yllo/ui-lib'
-    import Config from '../Config.svelte'
 
     let state
 </script>
 
 <Meta
-    title="Example/SwitcherComponent"
+    title="Switcher"
     component={Switcher}
     argTypes={{
         // Props example
@@ -37,7 +36,6 @@
 
 <Template let:args>
     <Switcher {...args} isBinding bind:state />
-    <Config />
 </Template>
 
-<Story name="SwitcherComponent" />
+<Story name="Default" />

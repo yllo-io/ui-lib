@@ -1,11 +1,10 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
     import { Avatar, EAvatarShape } from '@yllo/ui-lib'
-    import Config from '../Config.svelte'
 </script>
 
 <Meta
-    title="Example/AvatarComponent"
+    title="Avatar"
     component={Avatar}
     argTypes={{
         image: { control: { type: 'text' }, table: { type: { summary: 'string | false' } } },
@@ -25,7 +24,6 @@
 
 <Template let:args>
     <Avatar {...args} />
-    <Config />
 </Template>
 
-<Story name="AvatarComponent" />
+<Story name="Avatar" />

@@ -1,11 +1,10 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
     import { Textarea } from '@yllo/ui-lib'
-    import Config from '../Config.svelte'
 </script>
 
 <Meta
-    title="Example/TextareaComponent"
+    title="Textarea"
     component={Textarea}
     argTypes={{
         label: {
@@ -21,10 +20,13 @@
     <div class="wrapper">
         <Textarea {...args} />
     </div>
-    <Config />
 </Template>
 
-<Story name="TextareaComponent" />
+<Story name="Default" />
+
+<Story name="Label" args={{ label: 'label text' }} />
+
+<!-- <Story name="Resize" args={{ isResize: true }} /> -->
 
 <style>
     .wrapper {

@@ -1,11 +1,12 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
     import { Select, SelectValueT } from '@yllo/ui-lib'
-    import Config from '../Config.svelte'
+    import CustomLabel from './assets/Select/CustomLabel.svelte'
+    import CustomOption from './assets/Select/CustomOption.svelte'
 </script>
 
 <Meta
-    title="Example/SelectComponent"
+    title="Select"
     component={Select}
     argTypes={{
         list: {
@@ -60,17 +61,44 @@
 />
 
 <Template let:args>
+    <!-- CustomLabel.svelte
+        <script lang="ts">
+            import type { SelectValueT } from '@yllo/ui-lib'
+
+            export let selectedItems: SelectValueT[] = []
+            export let isOpen: boolean
+        </script>
+
+        <div on:click class="color_line7 noselect" class:background-color_contrast1={isOpen}>
+            Selected: {selectedItems[0].value}
+        </div>
+    -->
+    <!-- CustomOption.svelte
+        <script lang="ts">
+            import type { SelectValueT } from '@yllo/ui-lib'
+
+            export let item: SelectValueT
+            export let isSelected: boolean
+        </script>
+
+        <div on:click class="color_line7 noselect" class:background-color_contrast1={isSelected}>
+            - {item.value} -
+        </div>
+    -->
     <div class="wrapper">
         <Select {...args} />
     </div>
-    <Config />
 </Template>
 
-<Story name="SelectComponent" />
+<Story name="Default" />
+
+<Story name="Multi Select" args={{ isMultiSelect: true }} />
+
+<Story name="Options & Label components" args={{ LabelComponent: CustomLabel, OptionComponent: CustomOption }} />
 
 <style>
     .wrapper {
         width: 200px;
-        height: 300px;
+        height: 200px;
     }
 </style>

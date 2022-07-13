@@ -1,19 +1,18 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-    import { Stepper, StepperStepT } from '@yllo/ui-lib'
-    import Config from '../Config.svelte'
+    import { Stepper, StepperStepT, Button, EColor } from '@yllo/ui-lib'
 
     let stepIndex
 </script>
 
 <Meta
-    title="Example/StepperComponent"
+    title="Stepper"
     component={Stepper}
     argTypes={{
         steps: {
             type: 'object',
             control: 'object',
-            defaultValue: [{ name: 'Step 1' }, { name: 'Step 2' }, { name: 'Step 3' }],
+            defaultValue: [{ name: 'Step 1', isClickable: true }, { name: 'Step 2' }, { name: 'Step 3' }],
             table: {
                 type: { summary: 'StepperStepT' },
             },
@@ -31,6 +30,7 @@
         <Stepper {...args} bind:stepIndex>
             {#if stepIndex === 0}
                 <div class="color_line7">Content of step 1</div>
+                <Button on:click={() => stepIndex++} color={EColor.line7}>Next</Button>
             {:else if stepIndex === 1}
                 <div class="color_line7">Content of step 2</div>
             {:else if stepIndex === 2}
@@ -38,13 +38,12 @@
             {/if}
         </Stepper>
     </div>
-    <Config />
 </Template>
 
-<Story name="StepperComponent" />
+<Story name="Default" />
 
 <style>
     .wrapper {
-        width: 400px;
+        width: 300px;
     }
 </style>

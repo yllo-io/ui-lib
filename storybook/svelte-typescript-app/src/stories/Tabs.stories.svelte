@@ -1,13 +1,12 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
     import { Tabs } from '@yllo/ui-lib'
-    import Config from '../Config.svelte'
 
     let active
 </script>
 
 <Meta
-    title="Example/TabsComponent"
+    title="Tabs"
     component={Tabs}
     argTypes={{
         tabs: {
@@ -47,10 +46,9 @@
             <div class="color_line7">Content of tab 3</div>
         {/if}
     </div>
-    <Config />
 </Template>
 
-<Story name="TabsComponent" />
+<Story name="Default" />
 
 <style>
     .wrapper {

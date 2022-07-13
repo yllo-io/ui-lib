@@ -1,9 +1,8 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
-    import Config from '../Config.svelte'
 </script>
 
-<Meta title="Example/TypographyComponent" />
+<Meta title="Typography" />
 
 <Template>
     <div class="color_line7">
@@ -43,7 +42,6 @@
     <div class="background-color_line3">background-color_line3</div>
     <div class="background-color_line2">background-color_line2</div>
     <div class="background-color_line1">background-color_line1</div>
-    <Config />
 </Template>
 
-<Story name="TypographyComponent" />
+<Story name="Typography" />

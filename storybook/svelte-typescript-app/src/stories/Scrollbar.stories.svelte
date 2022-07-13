@@ -1,13 +1,12 @@
 <script>
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
     import { Scrollbar } from '@yllo/ui-lib'
-    import Config from '../Config.svelte'
 
     let wrapper, container
 </script>
 
 <Meta
-    title="Example/ScrollbarComponent"
+    title="Scrollbar"
     component={Scrollbar}
     argTypes={{
         wrapper: {
@@ -59,10 +58,11 @@
             </div>
         </div>
     </div>
-    <Config />
 </Template>
 
-<Story name="ScrollbarComponent" />
+<Story name="Default" />
+
+<Story name="Thumb is always visible" args={{ hideNotActive: false }} />
 
 <style>
     .wrapper {
