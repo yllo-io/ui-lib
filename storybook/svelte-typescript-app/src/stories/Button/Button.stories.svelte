@@ -5,7 +5,7 @@
 </script>
 
 <Meta
-    title="Button"
+    title="Components/Button"
     component={Button}
     parameters={{
         docs: {
@@ -69,8 +69,6 @@
     <Button {...args} on:click={args.onClick}>Button</Button>
 </Template>
 
-<Story name="Default" args={{ variant: EButtonVariant.outlined, color: EColor.line7 }} />
-
 <Story name="Variants">
     <div class="row">
         <Button variant={EButtonVariant.outlined} color={EColor.line7}>Outlined</Button>
@@ -80,6 +78,16 @@
         <Button variant={EButtonVariant.text2} color={EColor.line5}>Text 2</Button>
     </div>
 </Story>
+
+<Story name="Outlined" args={{ variant: EButtonVariant.outlined, color: EColor.line7 }} />
+
+<Story name="Outlined 2" args={{ variant: EButtonVariant.outlined2, color: EColor.line7 }} />
+
+<Story name="Filled" args={{ variant: EButtonVariant.filled, color: EColor.line1 }} />
+
+<Story name="Text" args={{ variant: EButtonVariant.text, color: EColor.line4 }} />
+
+<Story name="Text 2" args={{ variant: EButtonVariant.text2, color: EColor.line5 }} />
 
 <style>
     .row {

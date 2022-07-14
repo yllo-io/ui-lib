@@ -1,0 +1,83 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Documentation/Getting started" />
+
+# @yllo/ui-lib
+
+[![yllo/ui-lib NPM package](https://img.shields.io/npm/v/@yllo/ui-lib?color=green)](https://www.npmjs.com/package/@yllo/ui-lib)
+
+## Examples
+
+- https://app.yllo.co
+- https://yllo.co/about
+- https://xlt.one
+- https://xlt.one/bridge
+
+## Installation instructions
+
+1. Install npm package
+
+```js
+npm install @yllo/ui-lib
+```
+
+2. Add theme and UI global styles
+
+```html
+<style lang="scss" global>
+    // first, the user interface will be rendered using the theme file
+    @import '../node_modules/@yllo/ui-lib/UI/theme-light.scss'; // or theme-dark.scss
+    @import '../node_modules/@yllo/ui-lib/UI/lib.scss';
+</style>
+```
+
+3. Set css root variables for fonts
+
+```css
+@font-face {
+	font-family: 'TerminusTTFWindows Regular';
+	src: url(../font/TerminusTTFWindows.ttf) format("truetype");
+	font-style: normal;
+	font-weight: 300;
+	text-rendering: optimizeLegibility
+}
+
+...
+
+:root {
+	--font-Regular: 'SFPro Display Regular';
+	--font-Medium: 'SFPro Display Medium';
+	--font-Semibold: 'SFPro Display Semibold';
+	--font-Digit: 'GothamPro-Medium';
+	--font-Math: 'TerminusTTFWindows Regular';
+}
+```
+
+4. Set theme settings (you can set the settings at any time)
+
+```js
+import { onMount } from 'svelte'
+import ui, { EThemeType } from '@yllo/ui-lib'
+
+onMount(() => {
+  ui.setThemeOptions({
+    themeType: EThemeType.light,
+    isRounded: true,
+    isShadow: true,
+    isBorder: true,
+    isInteractiveCursor: true,
+    isCircleCursor: true,
+  })
+})
+```
+
+## Start using the library
+
+```jsx
+<script>
+  import { Button, EColor } from '@yllo/ui-lib'
+</script>
+
+<Button color={EColor.line7}>Hello world!</Button>
+
+```

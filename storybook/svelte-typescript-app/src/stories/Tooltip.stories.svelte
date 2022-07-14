@@ -4,7 +4,7 @@
 </script>
 
 <Meta
-    title="Tooltip"
+    title="Components/Tooltip"
     component={Tooltip}
     argTypes={{
         text: {

@@ -6,7 +6,7 @@
 </script>
 
 <Meta
-    title="Select"
+    title="Components/Select"
     component={Select}
     argTypes={{
         list: {

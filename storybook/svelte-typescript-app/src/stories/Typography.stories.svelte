@@ -1,10 +1,10 @@
 <script>
-    import { Meta, Template, Story } from '@storybook/addon-svelte-csf'
+    import { Meta, Story } from '@storybook/addon-svelte-csf'
 </script>
 
-<Meta title="Typography" />
+<Meta title="Components/Typography" />
 
-<Template>
+<Story name="Typography">
     <div class="color_line7">
         <div class="h1">h1</div>
         <div class="h2">h2</div>
@@ -42,6 +42,4 @@
     <div class="background-color_line3">background-color_line3</div>
     <div class="background-color_line2">background-color_line2</div>
     <div class="background-color_line1">background-color_line1</div>
-</Template>
-
-<Story name="Typography" />
+</Story>

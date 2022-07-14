@@ -1,0 +1,52 @@
+import { Story, Preview } from '@storybook/addon-docs/blocks'
+
+# Interactive Cursor
+
+## Scale setting
+
+You can set scale of the element with *--scale* css variable and scale of the hover element with *--scale-hover*
+
+Example with image:
+
+```html
+<script>
+    import { interactiveElement } from '@yllo/ui-lib'
+</script>
+
+<div use:interactiveElement={{ isActive: true }}>
+    <img src="https://source.unsplash.com/random/200×200" alt="" />
+</div>
+
+<style>
+    div :global(.interactive-cursor-hover) {
+        --scale: 1.1;
+        --scale-hover: 1.1;
+    }
+</style>
+```
+
+<Story id="components-interactive-cursor--example"/>
+
+## isCursorHover setting
+
+Set *isCursorHover* to *false* to disable hover element
+
+```jsx
+<div use:interactiveElement={{ isActive: true, isCursorHover: false }}>
+    <img src="https://source.unsplash.com/random/100×100" alt="" />
+</div>
+```
+
+<Story id="components-interactive-cursor--example-2"/>
+
+## translateFactor setting
+
+Change *translateFactorX* or *translateFactorY* to control the movement
+
+```jsx
+<div use:interactiveElement={{ isActive: true, translateFactorY: 0 }}>
+    <img src="https://source.unsplash.com/random/100×100" alt="" />
+</div>
+```
+
+<Story id="components-interactive-cursor--example-3"/>

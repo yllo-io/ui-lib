@@ -4,7 +4,7 @@
 </script>
 
 <Meta
-    title="Avatar"
+    title="Components/Avatar"
     component={Avatar}
     argTypes={{
         image: { control: { type: 'text' }, table: { type: { summary: 'string | false' } } },

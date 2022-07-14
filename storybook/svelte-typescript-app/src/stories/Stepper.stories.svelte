@@ -6,7 +6,7 @@
 </script>
 
 <Meta
-    title="Stepper"
+    title="Components/Stepper"
     component={Stepper}
     argTypes={{
         steps: {

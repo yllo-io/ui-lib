@@ -4,7 +4,7 @@
 </script>
 
 <Meta
-    title="Paper"
+    title="Components/Paper"
     component={Paper}
     argTypes={{
         isBorder: {

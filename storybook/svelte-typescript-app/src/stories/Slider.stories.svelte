@@ -3,7 +3,7 @@
     import { Slider } from '@yllo/ui-lib'
 </script>
 
-<Meta title="Slider" component={Slider} argTypes={{}} />
+<Meta title="Components/Slider" component={Slider} argTypes={{}} />
 
 <Template let:args>
     <div class="wrapper">

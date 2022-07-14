@@ -6,7 +6,7 @@
 </script>
 
 <Meta
-    title="Switcher"
+    title="Components/Switcher"
     component={Switcher}
     argTypes={{
         // Props example

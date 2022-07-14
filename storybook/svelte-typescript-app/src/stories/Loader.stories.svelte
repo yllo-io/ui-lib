@@ -3,7 +3,7 @@
     import { Loader } from '@yllo/ui-lib'
 </script>
 
-<Meta title="Loader" component={Loader} argTypes={{}} />
+<Meta title="Components/Loader" component={Loader} argTypes={{}} />
 
 <Template let:args>
     <Loader {...args} />

@@ -6,7 +6,7 @@
 </script>
 
 <Meta
-    title="Scrollbar"
+    title="Components/Scrollbar"
     component={Scrollbar}
     argTypes={{
         wrapper: {
