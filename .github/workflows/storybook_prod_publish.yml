@@ -20,7 +20,7 @@ jobs:
               run: npm run build-storybook
               working-directory: storybook/svelte-typescript-app
             - name: Upload
-              uses: SamKirkland/FTP-Deploy-Action@4.3.0
+              uses: SamKirkland/FTP-Deploy-Action@4.0.0
               with:
                   server: 195.201.243.53
                   username: ftpylloco
