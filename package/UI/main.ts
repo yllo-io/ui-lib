@@ -5,10 +5,8 @@ import { setDefaultCursor } from './components/Cursor/cursor'
 
 export const setThemeOptions = (newThemeOptions: ThemeOptions): void => {
     const theme = get(_theme)
-    if (theme.themeType !== newThemeOptions.themeType) {
-        if (newThemeOptions.themeType === EThemeType.light) setRootVariables(themeVariablesLight)
-        else if (newThemeOptions.themeType === EThemeType.dark) setRootVariables(themeVariablesDark)
-    }
+    if (newThemeOptions.themeType === EThemeType.light) setRootVariables(themeVariablesLight)
+    else if (newThemeOptions.themeType === EThemeType.dark) setRootVariables(themeVariablesDark)
 
     _theme.set(newThemeOptions)
     if (newThemeOptions.isCircleCursor) {
